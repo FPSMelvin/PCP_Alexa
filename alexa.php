@@ -16,6 +16,7 @@ if(isset($json['session']['application']['applicationId'])){
     if ($type == "LaunchRequest"){
       $ssml = launchRequest();
     }
+    
 
     switch ($name) {
         case "NextAppointment":
