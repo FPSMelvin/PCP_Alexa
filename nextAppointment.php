@@ -21,7 +21,7 @@ function nextAppointment(){
 }
 
 function dailySchedule($dayParam){
-    $ssml = "<speak>I don't now what your schedule is for " . $dayParam . " sorry.";
+    $ssml = "<speak>I don't now what your schedule is for " . $dayParam . ", sorry.</speak>";
     return $ssml;
 }
 
