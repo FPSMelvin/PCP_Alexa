@@ -22,12 +22,14 @@ if(isset($json['session']['application']['applicationId'])){
             $ssml = nextAppointment();
             break;
         case "DailyScheduleIntent":
+            echo "test";
             // $ssml = dailySchedule($day);
             break;
-        case "":
-
+        case "test":
+            echo "";
             break;
         default:
+            echo "";
           // $array = array(
           //     "response" => array(
           //         "outputSpeech" => array(

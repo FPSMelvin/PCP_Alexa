@@ -9,12 +9,12 @@ function nextAppointment(){
     $hours = floor($timeDifference / 3600);
     $mins = floor($timeDifference / 60 % 60);
 
-    //$ssml = "<speak>Your next appointment is in " . $hours . " hours and " . $mins . " minutes.</speak>";
-    $ssml = "<speak>
-                I want to tell you a secret.
-                <amazon:effect name='whispered'>I am not a real human.</amazon:effect>.
-                Can you believe it?
-            </speak>";
+    $ssml = "<speak>Your next appointment is in " . $hours . " hours and " . $mins . " minutes.</speak>";
+    // $ssml = "<speak>
+    //             I want to tell you a secret.
+    //             <amazon:effect name='whispered'>I am not a real human.</amazon:effect>.
+    //             Can you believe it?
+    //         </speak>";
 
 
     return $ssml;
