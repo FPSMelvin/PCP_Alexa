@@ -8,22 +8,27 @@ $json = json_decode($data, true);
 if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
+    $type   = $json['request']['type'];
     $name   = $json['request']['intent']['name'];
     $ssml   = errorMessage();
 
-    switch ($name) {
-        case "NextAppointment":
-            //code to be executed if n=label1;
-            $ssml = nextAppointment();
-            break;
-        case "ErrorIntent":
-            $ssml = errorMessage();
-            break;
-        case "":
-            //code to be executed if n=label3;
-            break;
-        default:
-            //$ssml = errorMessage();
+    if($type == "LaunchRequest"){
+      LaunchRequest();
+    }else{
+      switch ($name) {
+          case "NextAppointment":
+              //code to be executed if n=label1;
+              $ssml = nextAppointment();
+              break;
+          case "":
+              //code to be executed if n=label2;
+              break;
+          case "":
+              //code to be executed if n=label3;
+              break;
+          default:
+              $ssml = errorMessage();
+      }
     }
 
     $array = array(
@@ -31,7 +36,7 @@ if(isset($json['session']['application']['applicationId'])){
             "outputSpeech" => array(
                 "type" => "SSML",
                 "ssml" => $ssml
-            )
+                )
         )
     );
 
