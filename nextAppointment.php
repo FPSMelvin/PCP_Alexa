@@ -40,6 +40,6 @@ function testGeluid(){
     Uptempo is the tempo
     <audio src='https://afty.nl/alexa/PCP_Alexa/uptempo.mp3' />
     yessss
-    </speak> "
+    </speak>";
     return $ssml;
 }
