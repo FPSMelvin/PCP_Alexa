@@ -16,45 +16,19 @@ if(isset($json['session']['application']['applicationId'])){
 
     //$ssml   = errorMessage();
 
-    // switch ($name) {
-    //     case "NextAppointment":
-    //         $ssml = nextAppointment();
-    //         break;
-    //     case "DailyScheduleIntent":
-    //         echo "test";
-    //         $ssml = dailySchedule($day);
-    //         break;
-    //     case "test":
-    //         echo "";
-    //         break;
-    //     default:
-    //         echo "";
-    //         $array = array(
-    //             "response" => array(
-    //                 "outputSpeech" => array(
-    //                     "type" => "SSML",
-    //                     "ssml" => $ssml
-    //                     )
-    //             )
-    //         );
-    //
-    //         $response = $array;
-    // }
-
-    if($type == "LaunchRequest"){
-      $ssml = launchRequest();
-    }else{
-      switch ($name) {
-          case "NextAppointment":
-              $ssml = nextAppointment();
-              break;
-          case "DailyScheduleIntent":
-              $ssml = dailySchedule($day);
-              break;
-          case "":
-              echo "";
-              break;
-          default:
+    switch ($name) {
+        case "NextAppointment":
+            $ssml = nextAppointment();
+            break;
+        case "DailyScheduleIntent":
+            echo "test";
+            $ssml = dailySchedule($day);
+            break;
+        case "test":
+            echo "";
+            break;
+        default:
+            echo "";
             $array = array(
                 "response" => array(
                     "outputSpeech" => array(
@@ -65,8 +39,34 @@ if(isset($json['session']['application']['applicationId'])){
             );
 
             $response = $array;
-      }
     }
+
+    // if($type == "LaunchRequest"){
+    //   $ssml = launchRequest();
+    // }else{
+    //   switch ($name) {
+    //       case "NextAppointment":
+    //           $ssml = nextAppointment();
+    //           break;
+    //       case "DailyScheduleIntent":
+    //           $ssml = dailySchedule($day);
+    //           break;
+    //       case "":
+    //           echo "";
+    //           break;
+    //       default:
+    //         $array = array(
+    //             "response" => array(
+    //                 "outputSpeech" => array(
+    //                     "type" => "SSML",
+    //                     "ssml" => $ssml
+    //                     )
+    //             )
+    //         );
+    //
+    //         $response = $array;
+    //   }
+    // }
 
     $array = array(
         "response" => array(
