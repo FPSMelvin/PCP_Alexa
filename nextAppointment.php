@@ -26,7 +26,7 @@ function dailySchedule($dayParam){
 }
 
 function errorMessage(){
-    $ssml = "<speak>talk better pls.</speak>";
+    $ssml = "<speak>talk better suka blyat.</speak>";
     return $ssml;
 }
 
