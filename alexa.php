@@ -1,5 +1,7 @@
 <?php
 
+require 'nextAppointment.php';
+
 $data = file_get_contents('php://input');
 $json = json_decode($data, true);
 
@@ -16,10 +18,10 @@ if(isset($json['session']['application']['applicationId'])){
 								$ssml = nextAppointment();
 				        break;
 				    case "":
-				        code to be executed if n=label2;
+				        //code to be executed if n=label2;
 				        break;
 				    case "":
-				        code to be executed if n=label3;
+				        //code to be executed if n=label3;
 				        break;
 				    default:
 							header('Content-Type: application/json');
