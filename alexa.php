@@ -13,7 +13,7 @@ if(isset($json['session']['application']['applicationId'])){
     $ssml   = errorMessage();
 
     if($type == "LaunchRequest"){
-      LaunchRequest();
+      $ssml = launchRequest();
     }else{
       switch ($name) {
           case "NextAppointment":
