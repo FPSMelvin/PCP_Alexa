@@ -20,6 +20,11 @@ function nextAppointment(){
     return $ssml;
 }
 
+function dailySchedule($dayParam){
+    $ssml = "<speak>I don't now what your schedule is for " . $dayParam . ", sorry.";
+    return $ssml;
+}
+
 function errorMessage(){
     $ssml = "<speak>talk better pls.</speak>";
     return $ssml;
