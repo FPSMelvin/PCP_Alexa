@@ -8,7 +8,7 @@ $json = json_decode($data, true);
 if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
-    $type   = $json['request']['type'];
+    $type   = $json['type'];
     $name   = $json['request']['intent']['name'];
 
     $ssml;
