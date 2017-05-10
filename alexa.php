@@ -5,7 +5,7 @@ require 'nextAppointment.php';
 $data = file_get_contents('php://input');
 $json = json_decode($data, true);
 
-file_put_contents('test.txt', $data);
+file_put_contents('test.txt', $data, FILE_APPEND);
 
 $ssml;
 
@@ -13,8 +13,6 @@ var_dump($json['request']['type']);
 
 
 if(isset($json['request']['type'])){
-
-
 
   $type = $json['request']['type'];
 
