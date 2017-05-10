@@ -15,7 +15,6 @@ if(isset($json['session']['application']['applicationId'])){
 
     //$day = $json['request']['intent']['slots']['day']['value'];
 
-
     $ssml;
 
     //$ssml   = errorMessage();
