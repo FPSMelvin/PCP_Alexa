@@ -21,6 +21,7 @@ if(isset($json['session']['application']['applicationId'])){
             $ssml = nextAppointment();
             break;
         case "DailyScheduleIntent":
+            $day = $json['request']['intent']['slots']['day']['value'];
             $ssml = dailySchedule($day);
             break;
         case "test":
