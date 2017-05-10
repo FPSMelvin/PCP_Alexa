@@ -8,9 +8,9 @@ $json = json_decode($data, true);
 if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
-    $type   = $json['request']['type'];
+    //$type   = $json['request']['type'];
     $name   = $json['request']['intent']['name'];
-    $day = $json['request']['intent']['slots']['day']['value'];
+    //$day = $json['request']['intent']['slots']['day']['value'];
 
     $ssml;
 
@@ -21,14 +21,12 @@ if(isset($json['session']['application']['applicationId'])){
             $ssml = nextAppointment();
             break;
         case "DailyScheduleIntent":
-            echo "test";
             $ssml = dailySchedule($day);
             break;
         case "test":
             echo "";
             break;
         default:
-            echo "";
             $array = array(
                 "response" => array(
                     "outputSpeech" => array(
