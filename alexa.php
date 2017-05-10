@@ -8,9 +8,9 @@ $json = json_decode($data, true);
 $ssml;
 
 
-if(isset($json['request'])){
+if(isset($json['request']['type'])){
 
-  $type = $json['type'];
+  $type = $json['request']['type'];
   if ($type == "LaunchRequest"){
     $ssml = launchRequest();
   }
