@@ -8,7 +8,7 @@ $json = json_decode($data, true);
 $ssml;
 
 var_dump($json['request']['type']);
-die();
+
 
 if(isset($json['request']['type'])){
 
@@ -20,6 +20,8 @@ if(isset($json['request']['type'])){
     $ssml = launchRequest();
   }
 
+  var_dump($ssml);
+  die();
 }
 
 if(isset($json['session']['application']['applicationId'])){
