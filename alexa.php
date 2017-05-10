@@ -10,12 +10,12 @@ if(isset($json['session']['application']['applicationId'])){
         $Id = $json['session']['application']['applicationId'];
 				$name = $json['request']['intent']['name'];
 
-        $ssml;
+        $ssml = errorMessage();
 
 				switch ($name) {
 				    case "NextAppointment":
 				        //code to be executed if n=label1;
-								$ssml = nextAppointment();
+				    $ssml = nextAppointment();
 				        break;
 				    case "":
 				        //code to be executed if n=label2;
