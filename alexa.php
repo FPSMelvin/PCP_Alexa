@@ -10,6 +10,7 @@ if(isset($json['session']['application']['applicationId'])){
     $Id     = $json['session']['application']['applicationId'];
 
     $type   = $json['request']['type'];
+
     $name   = $json['request']['intent']['name'];
 
     $day = $json['request']['intent']['slots']['day']['value'];
@@ -27,16 +28,16 @@ if(isset($json['session']['application']['applicationId'])){
 
             break;
         default:
-          $array = array(
-              "response" => array(
-                  "outputSpeech" => array(
-                      "type" => "SSML",
-                      "ssml" => $ssml
-                      )
-              )
-          );
-
-          $response = $array;
+          // $array = array(
+          //     "response" => array(
+          //         "outputSpeech" => array(
+          //             "type" => "SSML",
+          //             "ssml" => $ssml
+          //             )
+          //     )
+          // );
+          //
+          // $response = $array;
     }
 
     // if($type == "LaunchRequest"){
@@ -81,3 +82,5 @@ if(isset($json['session']['application']['applicationId'])){
 
 header('Content-Type: application/json');
 echo json_encode($response);
+
+?>
