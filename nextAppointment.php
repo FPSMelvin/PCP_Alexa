@@ -15,4 +15,5 @@ function nextAppointment(){
 
 function errorMessage(){
     $ssml = "<speak>talk better pls.</speak>";
+    return $ssml;
 }
