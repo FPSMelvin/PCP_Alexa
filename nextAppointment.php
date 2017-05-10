@@ -27,4 +27,5 @@ function errorMessage(){
 
 function launchRequest(){
     $ssml = "<speak><p>I'm Milo, how can I help you today?</speak>";
+    return $ssml;
 }
