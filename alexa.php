@@ -36,7 +36,7 @@ if(isset($json['session']['application']['applicationId'])){
                 "response" => array(
                     "outputSpeech" => array(
                         "type" => "SSML",
-                        "ssml" => "<speak>talk better suka blyat.</speak>";
+                        "ssml" => $ssml
                         )
                 )
             );
