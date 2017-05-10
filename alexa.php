@@ -28,15 +28,15 @@ if(isset($json['session']['application']['applicationId'])){
               $ssml = errorMessage();
             }
             break;
-        case "test":
-            echo "";
+        case "testIntent":
+            $ssml = testGeluid();
             break;
         default:
             $array = array(
                 "response" => array(
                     "outputSpeech" => array(
                         "type" => "SSML",
-                        "ssml" => $ssml
+                        "ssml" => "<speak>talk better suka blyat.</speak>";
                         )
                 )
             );

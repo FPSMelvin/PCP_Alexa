@@ -34,3 +34,12 @@ function launchRequest(){
     $ssml = "<speak><p>I'm Milo, how can I help you today?</speak>";
     return $ssml;
 }
+
+function testGeluid(){
+    $ssml = "<speak>
+    Uptempo is the tempo
+    <audio src='https://afty.nl/alexa/PCP_Alexa/uptempo.mp3' />
+    yessss
+    </speak> "
+    return $ssml;
+}
