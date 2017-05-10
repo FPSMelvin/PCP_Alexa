@@ -38,7 +38,7 @@ function launchRequest(){
 function testGeluid(){
     $ssml = "<speak>
     Uptempo is the tempo
-    <audio src='https://afty.nl/alexa/PCP_Alexa/uptempo.mp3' />
+    <audio src='https://afty.nl/alexa/PCP_Alexa/uptempoNEW.mp3' />
     yessss
     </speak>";
     return $ssml;
