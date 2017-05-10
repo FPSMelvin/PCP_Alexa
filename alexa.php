@@ -98,6 +98,17 @@ if(isset($json['session']['application']['applicationId'])){
 
 }
 
+$array = array(
+    "response" => array(
+        "outputSpeech" => array(
+            "type" => "SSML",
+            "ssml" => $ssml
+            )
+    )
+);
+
+$response = $array;
+
 header('Content-Type: application/json');
 echo json_encode($response);
 
