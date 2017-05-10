@@ -9,7 +9,7 @@ $ssml;
 
 
 if(isset($json['session'])){
-  $type   = $json['type'];
+  $type = $json['type'];
   if ($type == "LaunchRequest"){
     $ssml = launchRequest();
   }
