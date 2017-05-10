@@ -9,11 +9,14 @@ if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
 
-    $type   = $json['request']['type'];
+    //$type   = $json['request']['type'];
 
     $name   = $json['request']['intent']['name'];
 
-    $day = $json['request']['intent']['slots']['day']['value'];
+    //$day = $json['request']['intent']['slots']['day']['value'];
+
+
+    $ssml;
 
     //$ssml   = errorMessage();
 
