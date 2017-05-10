@@ -24,8 +24,7 @@ if(isset($json['session']['application']['applicationId'])){
 				        //code to be executed if n=label3;
 				        break;
 				    default:
-							header('Content-Type: application/json');
-							echo json_encode("doet het niett");
+				        $ssml = errorMessage();
 				}
 
         $array = array(

@@ -9,7 +9,10 @@ function nextAppointment(){
     $hours = floor($timeDifference / 3600);
     $mins = floor($timeDifference / 60 % 60);
 
-
     $ssml = "<speak>Your next appointment is in " . $hours . " hours and " . $mins . " minutes.</speak>";
     return $ssml;
+}
+
+function errorMessage(){
+    $ssml = "<speak>talk better pls.</speak>";
 }
