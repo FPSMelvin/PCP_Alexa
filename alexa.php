@@ -16,23 +16,55 @@ if(isset($json['session']['application']['applicationId'])){
 
     //$ssml   = errorMessage();
 
-    if($type == "LaunchRequest"){
-      $ssml = launchRequest();
-    }else{
-      switch ($name) {
-          case "NextAppointment":
-              $ssml = nextAppointment();
-              break;
-          case "DailyScheduleIntent":
-              $ssml = dailySchedule($day);
-              break;
-          case "":
+    switch ($name) {
+        case "NextAppointment":
+            $ssml = nextAppointment();
+            break;
+        case "DailyScheduleIntent":
+            $ssml = dailySchedule($day);
+            break;
+        case "":
 
-              break;
-          default:
-              //$ssml = errorMessage();
-      }
+            break;
+        default:
+          $array = array(
+              "response" => array(
+                  "outputSpeech" => array(
+                      "type" => "SSML",
+                      "ssml" => $ssml
+                      )
+              )
+          );
+
+          $response = $array;
     }
+
+    // if($type == "LaunchRequest"){
+    //   $ssml = launchRequest();
+    // }else{
+    //   switch ($name) {
+    //       case "NextAppointment":
+    //           $ssml = nextAppointment();
+    //           break;
+    //       case "DailyScheduleIntent":
+    //           $ssml = dailySchedule($day);
+    //           break;
+    //       case "":
+    //
+    //           break;
+    //       default:
+    //         $array = array(
+    //             "response" => array(
+    //                 "outputSpeech" => array(
+    //                     "type" => "SSML",
+    //                     "ssml" => $ssml
+    //                     )
+    //             )
+    //         );
+    //
+    //         $response = $array;
+    //   }
+    // }
 
     $array = array(
         "response" => array(
