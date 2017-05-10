@@ -8,17 +8,18 @@ $json = json_decode($data, true);
 $ssml;
 
 
-if(isset($json['session'])){
+if(isset($json['request'])){
+
   $type = $json['type'];
   if ($type == "LaunchRequest"){
     $ssml = launchRequest();
   }
+
 }
 
 if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
-
     $name   = $json['request']['intent']['name'];
 
 
