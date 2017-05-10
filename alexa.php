@@ -27,7 +27,7 @@ if(isset($json['session']['application']['applicationId'])){
               //code to be executed if n=label3;
               break;
           default:
-              $ssml = errorMessage();
+              //$ssml = errorMessage();
       }
     }
 
