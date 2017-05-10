@@ -13,7 +13,7 @@ if(isset($json['session']['application']['applicationId'])){
         $ssml;
 
 				switch ($name) {
-				    case "next appointment":
+				    case "NextAppointment":
 				        //code to be executed if n=label1;
 								$ssml = nextAppointment();
 				        break;
@@ -43,10 +43,10 @@ if(isset($json['session']['application']['applicationId'])){
 header('Content-Type: application/json');
 echo json_encode($response);
 
-else{
-	header('Content-Type: application/json');
-  echo json_encode("doet het niett");
-}
+// else{
+// 	header('Content-Type: application/json');
+//   echo json_encode("doet het niett");
+// }
 
 
 ?>
