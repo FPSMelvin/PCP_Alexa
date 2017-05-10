@@ -8,23 +8,26 @@ $json = json_decode($data, true);
 if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
+
     $type   = $json['request']['type'];
     $name   = $json['request']['intent']['name'];
-    $ssml   = errorMessage();
+
+    $day = $json['request']['intent']['slots']['day']['value'];
+
+    //$ssml   = errorMessage();
 
     if($type == "LaunchRequest"){
       $ssml = launchRequest();
     }else{
       switch ($name) {
           case "NextAppointment":
-              //code to be executed if n=label1;
               $ssml = nextAppointment();
               break;
-          case "":
-              //code to be executed if n=label2;
+          case "DailyScheduleIntent":
+              $ssml = dailySchedule($day);
               break;
           case "":
-              //code to be executed if n=label3;
+
               break;
           default:
               //$ssml = errorMessage();
