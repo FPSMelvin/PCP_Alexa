@@ -16,14 +16,14 @@ if(isset($json['session']['application']['applicationId'])){
             //code to be executed if n=label1;
             $ssml = nextAppointment();
             break;
-        case "":
-            //code to be executed if n=label2;
+        case "ErrorIntent":
+            $ssml = errorMessage();
             break;
         case "":
             //code to be executed if n=label3;
             break;
         default:
-            $ssml = errorMessage();
+            //$ssml = errorMessage();
     }
 
     $array = array(
@@ -31,7 +31,7 @@ if(isset($json['session']['application']['applicationId'])){
             "outputSpeech" => array(
                 "type" => "SSML",
                 "ssml" => $ssml
-                )
+            )
         )
     );
 
