@@ -13,7 +13,7 @@ if(isset($json['session']['application']['applicationId'])){
         $ssml;
 
 				switch ($name) {
-				    case "next appointment":
+				    case "NextAppointment":
 				        //code to be executed if n=label1;
 								$ssml = nextAppointment();
 				        break;
