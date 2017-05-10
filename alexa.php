@@ -5,18 +5,22 @@ require 'nextAppointment.php';
 $data = file_get_contents('php://input');
 $json = json_decode($data, true);
 
+$ssml;
+
+
+if(isset($json['session'])){
+  $type   = $json['type'];
+  if ($type == "LaunchRequest"){
+    $ssml = launchRequest();
+  }
+}
+
 if(isset($json['session']['application']['applicationId'])){
 
     $Id     = $json['session']['application']['applicationId'];
-    $type   = $json['type'];
+
     $name   = $json['request']['intent']['name'];
 
-    $ssml;
-
-    if ($type == "LaunchRequest"){
-      $ssml = launchRequest();
-    }
-    
 
     switch ($name) {
         case "NextAppointment":
