@@ -21,7 +21,7 @@ if(isset($json['request']['type'])){
   }
 
   var_dump($ssml);
-  die();
+  
 }
 
 if(isset($json['session']['application']['applicationId'])){
