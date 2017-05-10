@@ -19,18 +19,18 @@ function nextAppointment(){
 
     return $ssml;
 }
-//
-// function dailySchedule($dayParam){
-//     $ssml = "<speak>I don't now what your schedule is for " . $dayParam . ", sorry.";
-//     return $ssml;
-// }
-//
-// function errorMessage(){
-//     $ssml = "<speak>talk better pls.</speak>";
-//     return $ssml;
-// }
-//
-// function launchRequest(){
-//     $ssml = "<speak><p>I'm Milo, how can I help you today?</speak>";
-//     return $ssml;
-// }
+
+function dailySchedule($dayParam){
+    $ssml = "<speak>I don't now what your schedule is for " . $dayParam . ", sorry.";
+    return $ssml;
+}
+
+function errorMessage(){
+    $ssml = "<speak>talk better pls.</speak>";
+    return $ssml;
+}
+
+function launchRequest(){
+    $ssml = "<speak><p>I'm Milo, how can I help you today?</speak>";
+    return $ssml;
+}
