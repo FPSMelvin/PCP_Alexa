@@ -131,8 +131,7 @@ $json = json_decode('{
 }');
 
 
-$response = array("response" => $json);
-$response = $json;
+$response = array("response" => $json, "shouldEndSession": false);
 
 header('Content-Type: application/json');
 echo json_encode($response);
