@@ -123,8 +123,9 @@ if ($delegate == true){
 //$delegate ? $response = $dialogDelegate : $response = $array;
 
 
-$response = array(
-   "type" => "Dialog.Delegate",
+$response = array("response" => array(
+    "type" => "Dialog.Delegate",
+)
 );
 
 header('Content-Type: application/json');
