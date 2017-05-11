@@ -7,6 +7,7 @@ $json = json_decode($data, true);
 
 //file_put_contents('test2.txt', $data.PHP_EOL, FILE_APPEND);
 
+$day;
 $ssml;
 $delegate = false;
 
@@ -20,30 +21,12 @@ if(isset($json['request']['type'])){
    if ($type == "LaunchRequest"){
        $ssml = launchRequest();
    }
-
    //var_dump($ssml);
-
 }
 
-$day;
-
-if(isset($json['request']['dialogState'])){
-    //if($json['request']['dialogState'] == "STARTED"){
-        $delegate = true;
-        $ssml = "<speak>it is working</speak>";
-    //}
-}
-// // check if the user says any day in his request
-// if(isset($json['request']['intent']['slots']['day']['value'])){
-//     $day = $json['request']['intent']['slots']['day']['value'];
-//     $ssml = dailySchedule($day);
-// }else{
-//   $ssml = errorMessage();
-// }
 
 
-
-
+// check if response has a session and applicationid
 if(isset($json['session']['application']['applicationId'])){
 
    $Id     = $json['session']['application']['applicationId'];
@@ -55,13 +38,22 @@ if(isset($json['session']['application']['applicationId'])){
            break;
        case "DailyScheduleIntent":
 
-
-           if(isset($json['request']['intent']['slots']['day']['value'])){
-               $day = $json['request']['intent']['slots']['day']['value'];
-               $ssml = dailySchedule($day);
+           if($json['request']['dialogState'] == "STARTED"){
+              //  $delegate = true;
+              //  $ssml = "<speak>it is working</speak>";
+           }elseif (isset($json['request']['intent']['slots']['day']['value'])) {
+             $day = $json['request']['intent']['slots']['day']['value'];
+             $ssml = dailySchedule($day);
            }else{
              $ssml = errorMessage();
            }
+
+          //  if(isset($json['request']['intent']['slots']['day']['value'])){
+          //      $day = $json['request']['intent']['slots']['day']['value'];
+          //      $ssml = dailySchedule($day);
+          //  }else{
+          //    $ssml = errorMessage();
+          //  }
            break;
        case "testIntent":
            $ssml = testGeluid();
