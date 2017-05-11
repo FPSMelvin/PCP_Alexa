@@ -117,8 +117,9 @@ if(isset($json['session']['application']['applicationId'])){
 
 }
 
-$dialogDelegate = array(
-   "type" => "Dialog.ConfirmIntent"/*,
+/*$dialogDelegate = array(
+   "type" => "Dialog.ConfirmIntent"
+   ,
    "updatedIntent" => array(
        "name" => "DailyScheduleIntent",
        "confirmationStatus" => "NONE",
@@ -129,8 +130,13 @@ $dialogDelegate = array(
                "confirmationstatus" => "NONE"
            )
        )
-   )*/
+   )
+);*/
+
+$dialogDelegate = array(
+    "type" => "Dialog.Delegate",
 );
+
 
 $array = array(
    "response" => array(
