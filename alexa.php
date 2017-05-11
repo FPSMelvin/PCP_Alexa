@@ -9,7 +9,7 @@ $day;
 $ssml;
 $delegate = false;
 
-//file_put_contents('test2.txt', $data.PHP_EOL, FILE_APPEND);
+file_put_contents('test4.txt', $data.PHP_EOL, FILE_APPEND);
 //var_dump($json['request']['type']);
 
 if(isset($json['request']['type'])){
