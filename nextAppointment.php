@@ -25,8 +25,11 @@ function dailySchedule($dayParam){
     return $ssml;
 }
 
-function errorMessage(){
-    $ssml = "<speak>talk better suka blyat.</speak>";
+function errorMessage($var){
+    if(!isset($var)){
+        $var = "00";
+    }
+    $ssml = "<speak>Error code " . $var ."</speak>";
     return $ssml;
 }
 
