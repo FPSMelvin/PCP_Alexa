@@ -132,16 +132,11 @@ $json = json_decode('{
          {
             "type":"Dialog.Delegate",
             "updatedIntent":{
-               "name":"StockPrice",
+               "name":"DailyScheduleIntent",
                "confirmationStatus":"NONE",
                "slots":{
-                  "command":{
-                     "name":"command",
-                     "value":"price",
-                     "confirmationStatus":"NONE"
-                  },
-                  "company_symbol":{
-                     "name":"company_symbol",
+                  "day":{
+                     "name":"day",
                      "confirmationStatus":"NONE"
                   }
                }
