@@ -130,7 +130,22 @@ $json = json_decode('{
    "response":{
       "directives":[
          {
-            "type":"Dialog.Delegate"
+            "type":"Dialog.Delegate",
+            "updatedIntent":{
+               "name":"StockPrice",
+               "confirmationStatus":"NONE",
+               "slots":{
+                  "command":{
+                     "name":"command",
+                     "value":"price",
+                     "confirmationStatus":"NONE"
+                  },
+                  "company_symbol":{
+                     "name":"company_symbol",
+                     "confirmationStatus":"NONE"
+                  }
+               }
+            }
          }
       ]
    }
