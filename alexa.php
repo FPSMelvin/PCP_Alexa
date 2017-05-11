@@ -99,10 +99,6 @@ if(isset($json['session']['application']['applicationId'])){
 
 $dialogDelegate = array(
    "type" => "Dialog.Delegate",
-   "updatedIntent" => array(
-       "name" => "DailyScheduleIntent",
-       "confirmationStatus" => "NONE",
-   )
 );
 
 
