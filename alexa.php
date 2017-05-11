@@ -123,7 +123,7 @@ if ($delegate == true){
 //$delegate ? $response = $dialogDelegate : $response = $array;
 
 
-$reponse = array(
+$response = array(
    "type" => "Dialog.Delegate",
 );
 
