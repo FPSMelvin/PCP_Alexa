@@ -128,6 +128,7 @@ $array = array(
        )
    )
 );
+$response = $array;
 
 //Check if it should delegate or send out outputSpeech
 //$delegate ? $response = $dialogDelegate : $response = $array;
