@@ -35,6 +35,13 @@ if(isset($json['session']['application']['applicationId'])){
            $ssml = nextAppointment();
            break;
        case "DailyScheduleIntent":
+
+             if(isset($json['request']['dialogState'])){
+                 if($json['request']['dialogState'] == "STARTED"){
+                     //$delegate = true;
+                     $ssml = "<speak>it is working</speak>";
+                 }
+             }
             // check if the user says any day in his request
              if(isset($json['request']['intent']['slots']['day']['value'])){
                  $day = $json['request']['intent']['slots']['day']['value'];
@@ -43,17 +50,7 @@ if(isset($json['session']['application']['applicationId'])){
                $ssml = errorMessage();
              }
 
-          //  if(isset($json['request']['intent']['slots']['day']['value'])){
-          //      $day = $json['request']['intent']['slots']['day']['value'];
-          //      $ssml = dailySchedule($day);
-          //  }else{
-          //      $ssml = errorMessage();
-          //  }
-          //  if(isset($json['request']['dialogState'])){
-          //      //if($json['request']['dialogState'] == "STARTED"){
-          //          $delegate = true;
-          //      //}
-          //  }
+
            break;
        case "testIntent":
            $ssml = testGeluid();
