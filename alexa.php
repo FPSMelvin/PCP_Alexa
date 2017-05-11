@@ -130,7 +130,7 @@ $json = json_decode('{
    "response":{
       "directives":[
          {
-            "type":"Dialog.Delegate",
+            "type":"Dialog.Delegate"
          }
       ]
    }
