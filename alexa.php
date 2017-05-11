@@ -29,7 +29,7 @@ $day;
 
 if(isset($json['request']['dialogState'])){
     if($json['request']['dialogState'] == "STARTED"){
-        //$delegate = true;
+        $delegate = true;
         $ssml = "<speak>it is working</speak>";
     }
 }
@@ -142,13 +142,13 @@ $response = $array;
 
 //Check if it should delegate or send out outputSpeech
 //$delegate ? $response = $dialogDelegate : $response = $array;
-/*if($delegate){
+if($delegate){
     $response = $dialogDelegate;
     $delegate = false;
 }
 else{
     $response = $array;
-}*/
+}
 
 header('Content-Type: application/json');
 echo json_encode($response);
