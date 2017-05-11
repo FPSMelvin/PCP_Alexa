@@ -123,6 +123,10 @@ if ($delegate == true){
 //$delegate ? $response = $dialogDelegate : $response = $array;
 
 
+$reponse = array(
+   "type" => "Dialog.Delegate",
+);
+
 header('Content-Type: application/json');
 echo json_encode($response);
 
