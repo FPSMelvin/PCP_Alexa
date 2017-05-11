@@ -38,8 +38,6 @@ if(isset($json['session']['application']['applicationId'])){
            break;
        case "DailyScheduleIntent":
 
-
-
            if($json['request']['dialogState'] == "STARTED"){
               $day = $json['request']['intent']['slots']['day']['value'];
               if (!isset($day)){
