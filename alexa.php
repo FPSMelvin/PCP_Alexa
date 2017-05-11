@@ -123,10 +123,19 @@ if ($delegate == true){
 //$delegate ? $response = $dialogDelegate : $response = $array;
 
 
-$response = array("response" => array(
-    "type" => "Dialog.Delegate",
-)
-);
+
+$json = json_decode('{
+      "outputSpeech" : null,
+      "card" : null,
+      "directives" : [ {
+        "type" : "Dialog.Delegate"
+      } ],
+      "reprompt" : null,
+      "shouldEndSession" : false
+}');
+
+
+$response = array("response" => $json);
 
 header('Content-Type: application/json');
 echo json_encode($response);
