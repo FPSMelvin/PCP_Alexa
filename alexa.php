@@ -28,10 +28,10 @@ if(isset($json['request']['type'])){
 $day;
 
 if(isset($json['request']['dialogState'])){
-    if($json['request']['dialogState'] == "STARTED"){
+    //if($json['request']['dialogState'] == "STARTED"){
         $delegate = true;
         $ssml = "<speak>it is working</speak>";
-    }
+    //}
 }
 // check if the user says any day in his request
 if(isset($json['request']['intent']['slots']['day']['value'])){
@@ -116,7 +116,7 @@ if(isset($json['session']['application']['applicationId'])){
 }
 
 $dialogDelegate = array(
-   "type" => "Dialog.Delegate"/*,
+   "type" => "Dialog.ConfirmIntent"/*,
    "updatedIntent" => array(
        "name" => "DailyScheduleIntent",
        "confirmationStatus" => "NONE",
