@@ -5,23 +5,25 @@ require 'nextAppointment.php';
 $data = file_get_contents('php://input');
 $json = json_decode($data, true);
 
-//file_put_contents('test.txt', $data.PHP_EOL, FILE_APPEND);
+file_put_contents('test.txt', $data.PHP_EOL, FILE_APPEND);
 
 $ssml;
-$delegate = false;
 
-//var_dump($json['request']['type']);
+var_dump($json['request']['type']);
 
+if ($json['request']['type']['SessionEndedRequest'] == ""){
+  echo "";
+}
 
 if(isset($json['request']['type'])){
 
-    $type = $json['request']['type'];
+  $type = $json['request']['type'];
 
-    if ($type == "LaunchRequest"){
-        $ssml = launchRequest();
-    }
+  if ($type == "LaunchRequest"){
+    $ssml = launchRequest();
+  }
 
-    //var_dump($ssml);
+  var_dump($ssml);
 
 }
 
@@ -30,21 +32,17 @@ if(isset($json['session']['application']['applicationId'])){
     $Id     = $json['session']['application']['applicationId'];
     $name   = $json['request']['intent']['name'];
 
+
     switch ($name) {
         case "NextAppointment":
             $ssml = nextAppointment();
             break;
         case "DailyScheduleIntent":
             if(isset($json['request']['intent']['slots']['day']['value'])){
-                $day = $json['request']['intent']['slots']['day']['value'];
-                $ssml = dailySchedule($day);
+              $day = $json['request']['intent']['slots']['day']['value'];
+              $ssml = dailySchedule($day);
             }else{
-                $ssml = errorMessage();
-            }
-            if(isset($json['request']['dialogState'])){
-                if($json['request']['dialogState'] == "STARTED"){
-                    $delegate = true;
-                }
+              $ssml = errorMessage();
             }
             break;
         case "testIntent":
@@ -103,33 +101,16 @@ if(isset($json['session']['application']['applicationId'])){
 
 }
 
-$dialogDelegate = array(
-    "type" => "Dialog.Delegate"/*,
-    "updatedIntent" => array(
-        "name" => "DailyScheduleIntent",
-        "confirmationStatus" => "NONE",
-        "slots" => array(
-            "string" => array(
-                "name" => "day",
-                "value" => "string",
-                "confirmationstatus" => "NONE"
-            )
-        )
-    )*/
-);
-
 $array = array(
     "response" => array(
         "outputSpeech" => array(
             "type" => "SSML",
             "ssml" => $ssml
-        )
+            )
     )
 );
 
-//Check if it should delegate or send out outputSpeech
-$delegate ? $response = $dialogDelegate : $response = $array;
-
+$response = $array;
 
 header('Content-Type: application/json');
 echo json_encode($response);
