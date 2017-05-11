@@ -5,19 +5,15 @@ require 'nextAppointment.php';
 $data = file_get_contents('php://input');
 $json = json_decode($data, true);
 
-//file_put_contents('test2.txt', $data.PHP_EOL, FILE_APPEND);
-
 $day;
 $ssml;
 $delegate = false;
 
+//file_put_contents('test2.txt', $data.PHP_EOL, FILE_APPEND);
 //var_dump($json['request']['type']);
 
-
 if(isset($json['request']['type'])){
-
    $type = $json['request']['type'];
-
    if ($type == "LaunchRequest"){
        $ssml = launchRequest();
    }
@@ -37,28 +33,12 @@ if(isset($json['session']['application']['applicationId'])){
            $ssml = nextAppointment();
            break;
        case "DailyScheduleIntent":
-
-           if($json['request']['dialogState'] == "STARTED"){
-              $day = $json['request']['intent']['slots']['day']['value'];
-              if (!isset($day)){
-                $ssml = errorMessage();
-              }
-              //$ssml = dailySchedule($day);
-              //  $delegate = true;
-              //  $ssml = "<speak>it is working</speak>";
-           }elseif (isset($json['request']['intent']['slots']['day']['value'])) {
+          if (isset($json['request']['intent']['slots']['day']['value'])) {
              $day = $json['request']['intent']['slots']['day']['value'];
              $ssml = dailySchedule($day);
            }else{
              $ssml = errorMessage();
            }
-
-          //  if(isset($json['request']['intent']['slots']['day']['value'])){
-          //      $day = $json['request']['intent']['slots']['day']['value'];
-          //      $ssml = dailySchedule($day);
-          //  }else{
-          //    $ssml = errorMessage();
-          //  }
            break;
        case "testIntent":
            $ssml = testGeluid();
