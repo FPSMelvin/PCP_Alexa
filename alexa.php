@@ -37,7 +37,8 @@ if(isset($json['session']['application']['applicationId'])){
              $day = $json['request']['intent']['slots']['day']['value'];
              $ssml = dailySchedule($day);
            }else{
-             $ssml = errorMessage();
+             $delegate = true;
+             //$ssml = errorMessage();
            }
            break;
        case "testIntent":
@@ -96,25 +97,14 @@ if(isset($json['session']['application']['applicationId'])){
 
 }
 
-/*$dialogDelegate = array(
-   "type" => "Dialog.ConfirmIntent"
-   ,
+$dialogDelegate = array(
+   "type" => "Dialog.Delegate",
    "updatedIntent" => array(
        "name" => "DailyScheduleIntent",
        "confirmationStatus" => "NONE",
-       "slots" => array(
-           "string" => array(
-               "name" => "day",
-               "value" => "string",
-               "confirmationstatus" => "NONE"
-           )
-       )
    )
-);*/
-
-$dialogDelegate = array(
-    "type" => "Dialog.Delegate",
 );
+
 
 
 $array = array(
@@ -126,6 +116,12 @@ $array = array(
    )
 );
 $response = $array;
+
+
+if ($delegate == true){
+  $response = $dialogDelegate;
+  $delegate = false;
+}
 
 //Check if it should delegate or send out outputSpeech
 //$delegate ? $response = $dialogDelegate : $response = $array;
