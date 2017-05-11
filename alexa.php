@@ -38,9 +38,14 @@ if(isset($json['session']['application']['applicationId'])){
            break;
        case "DailyScheduleIntent":
 
+
+
            if($json['request']['dialogState'] == "STARTED"){
               $day = $json['request']['intent']['slots']['day']['value'];
-              $ssml = dailySchedule($day);
+              if (!isset($day)){
+                $ssml = errorMessage();
+              }
+              //$ssml = dailySchedule($day);
               //  $delegate = true;
               //  $ssml = "<speak>it is working</speak>";
            }elseif (isset($json['request']['intent']['slots']['day']['value'])) {
