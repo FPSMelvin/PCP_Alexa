@@ -124,11 +124,7 @@ if ($delegate == true){
 
 
 
-$json = json_decode('{
-      "directives" : [ {
-        "type" : "Dialog.Delegate"
-      } ]
-}');
+$json = json_decode('    {        "version": "1.0",        "shouldEndSession": "false",        "response": {            "directives": [                {                    "type": "Dialog.Delegate",                    "company_symbol": {                                "name": "company_symbol",                                "confirmationStatus": "NONE"                            }                        }                    }                }            ]        }    }');
 
 
 $response = array("response" => $json, "shouldEndSession": false);
