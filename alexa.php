@@ -38,22 +38,22 @@ if(isset($json['session']['application']['applicationId'])){
            break;
        case "DailyScheduleIntent":
 
-           if($json['request']['dialogState'] == "STARTED"){
-              //  $delegate = true;
-              //  $ssml = "<speak>it is working</speak>";
-           }elseif (isset($json['request']['intent']['slots']['day']['value'])) {
-             $day = $json['request']['intent']['slots']['day']['value'];
-             $ssml = dailySchedule($day);
-           }else{
-             $ssml = errorMessage();
-           }
-
-          //  if(isset($json['request']['intent']['slots']['day']['value'])){
-          //      $day = $json['request']['intent']['slots']['day']['value'];
-          //      $ssml = dailySchedule($day);
+          //  if($json['request']['dialogState'] == "STARTED"){
+          //     //  $delegate = true;
+          //     //  $ssml = "<speak>it is working</speak>";
+          //  }elseif (isset($json['request']['intent']['slots']['day']['value'])) {
+          //    $day = $json['request']['intent']['slots']['day']['value'];
+          //    $ssml = dailySchedule($day);
           //  }else{
           //    $ssml = errorMessage();
           //  }
+
+           if(isset($json['request']['intent']['slots']['day']['value'])){
+               $day = $json['request']['intent']['slots']['day']['value'];
+               $ssml = dailySchedule($day);
+           }else{
+             $ssml = errorMessage();
+           }
            break;
        case "testIntent":
            $ssml = testGeluid();
