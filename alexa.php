@@ -125,13 +125,9 @@ if ($delegate == true){
 
 
 $json = json_decode('{
-      "outputSpeech" : null,
-      "card" : null,
       "directives" : [ {
         "type" : "Dialog.Delegate"
-      } ],
-      "reprompt" : null,
-      "shouldEndSession" : false
+      } ]
 }');
 
 
