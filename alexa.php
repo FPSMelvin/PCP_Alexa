@@ -128,8 +128,14 @@ $array = array(
 );
 
 //Check if it should delegate or send out outputSpeech
-$delegate ? $response = $dialogDelegate : $response = $array;
-
+//$delegate ? $response = $dialogDelegate : $response = $array;
+if($delegate){
+    $response = $dialogDelegate;
+    $delegate = false;
+}
+else{
+    $response = $array;
+}
 
 header('Content-Type: application/json');
 echo json_encode($response);
