@@ -42,9 +42,9 @@ if(isset($json['session']['application']['applicationId'])){
                $ssml = errorMessage();
            }
            if(isset($json['request']['dialogState'])){
-               if($json['request']['dialogState'] == "STARTED"){
+               //if($json['request']['dialogState'] == "STARTED"){
                    $delegate = true;
-               }
+               //}
            }
            break;
        case "testIntent":
