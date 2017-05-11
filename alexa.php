@@ -126,4 +126,6 @@ if ($delegate == true){
 header('Content-Type: application/json');
 echo json_encode($response);
 
+file_put_contents('test3.txt', json_encode($response).PHP_EOL, FILE_APPEND);
+
 ?>
