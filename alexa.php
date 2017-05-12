@@ -9,7 +9,7 @@ $day;
 $ssml;
 $delegate = false;
 
-file_put_contents('test4.txt', print_r($json, true).PHP_EOL.'-----'.PHP_EOL, FILE_APPEND);
+//file_put_contents('test4.txt', print_r($json, true).PHP_EOL.'-----'.PHP_EOL, FILE_APPEND);
 //var_dump($json['request']['type']);
 
 if(isset($json['request']['type'])){
@@ -124,34 +124,36 @@ if ($delegate == true){
 
 
 
-$json = json_decode('{
-   "version":"1.0",
-   "shouldEndSession":"false",
-   "response":{
-      "directives":[
-         {
-            "type":"Dialog.Delegate",
-            "updatedIntent":{
-               "name":"DailyScheduleIntent",
-               "confirmationStatus":"NONE",
-               "slots":{
-                  "day":{
-                     "name":"day",
-                     "confirmationStatus":"NONE"
-                  }
-               }
-            }
-         }
-      ]
-   }
-}');
+// $json = json_decode('{
+//    "version":"1.0",
+//    "shouldEndSession":"false",
+//    "response":{
+//       "directives":[
+//          {
+//             "type":"Dialog.Delegate",
+//             "updatedIntent":{
+//                "name":"DailyScheduleIntent",
+//                "confirmationStatus":"NONE",
+//                "slots":{
+//                   "day":{
+//                      "name":"day",
+//                      "confirmationStatus":"NONE"
+//                   }
+//                }
+//             }
+//          }
+//       ]
+//    }
+// }');
+//
+//
+// $response = array("response" => $json);
+// $response = $json;
 
 
-$response = array("response" => $json);
-$response = $json;
 header('Content-Type: application/json');
 echo json_encode($response);
 
-file_put_contents('test3.txt', json_encode($response).PHP_EOL, FILE_APPEND);
+//file_put_contents('test3.txt', json_encode($response).PHP_EOL, FILE_APPEND);
 
 ?>
