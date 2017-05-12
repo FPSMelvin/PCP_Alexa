@@ -7,35 +7,60 @@ $data = json_decode( file_get_contents('php://input') );
 
 if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
-  $day = $data->request->intent->slots->day->value;
-  $ssml = dailySchedule($day);
+?>
+  {
+      "version": "1.0",
+      "sessionAttributes": {},
+      "response": {
+          "outputSpeech": {
+              "type": "PlainText",
+              "text": "This will be fun. hiking from Seattle to Portland on 2017-04-21"
+          },
+          "card": {
+              "type": "Simple",
+              "title": "SessionSpeechlet - Travel booking",
+              "content": "SessionSpeechlet - This will be fun. hiking from Seattle to Portland on 2017-04-21"
+          },
+          "reprompt": {
+              "outputSpeech": {
+                  "type": "PlainText",
+                  "text": ""
+              }
+          },
+          "shouldEndSession": true
+      }
+  }
+  <?php
 
-  $array = array(
-      "version" => "1.0",
-      "sessionAttributes" => array(),
-      "reponse" => array(
-          "outputSpeech" => array(
-              "type" => "SSML",
-              "ssml" => $ssml
-              )
-      ),
-      "card" => array(
-          "type" => "Simple",
-          "title" => "SessionSpeechlet - Travel booking",
-          "content" => "SessionSpeechlet - This will be fun. hiking from eindhoven to amsterdam on 2017-04-21"
-      ),
-      "reprompt" => array(
-          "outputSpeech" => array(
-              "type" => "PlainText",
-              "text" => ""
-          )
-      ),
-      "shouldEndSession" => true
-  );
-
-  $response = $array;
-
-  echo json_encode($response);
+  // $day = $data->request->intent->slots->day->value;
+  // $ssml = dailySchedule($day);
+  //
+  // $array = array(
+  //     "version" => "1.0",
+  //     "sessionAttributes" => array(),
+  //     "reponse" => array(
+  //         "outputSpeech" => array(
+  //             "type" => "SSML",
+  //             "ssml" => $ssml
+  //             )
+  //     ),
+  //     "card" => array(
+  //         "type" => "Simple",
+  //         "title" => "SessionSpeechlet - Travel booking",
+  //         "content" => "SessionSpeechlet - This will be fun. hiking from eindhoven to amsterdam on 2017-04-21"
+  //     ),
+  //     "reprompt" => array(
+  //         "outputSpeech" => array(
+  //             "type" => "PlainText",
+  //             "text" => ""
+  //         )
+  //     ),
+  //     "shouldEndSession" => true
+  // );
+  //
+  // $response = $array;
+  //
+  // echo json_encode($response);
 
 }
 else{
