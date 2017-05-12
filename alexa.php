@@ -47,9 +47,28 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
 
       $name = $data->request->intent->name;
 
-      if ($name == "DailyScheduleIntent"){
-        $ssml = nextAppointment();
-      }
+       switch ($name) {
+          case "NextAppointment":
+              $ssml = nextAppointment();
+              break;
+          case "DailyScheduleIntent":
+              $ssml = dailySchedule($day);
+            //  if (isset($json['request']['intent']['slots']['day']['value'])) {
+            //     $day = $json['request']['intent']['slots']['day']['value'];
+            //     $ssml = dailySchedule($day);
+            //   }
+              break;
+          case "testIntent":
+              $ssml = testGeluid();
+              break;
+          default:
+              $ssml = "<speak>Empty</speak>";
+
+       }
+
+      // if ($name == "DailyScheduleIntent"){
+      //   $ssml = nextAppointment();
+      // }
 
 ?>
   {
