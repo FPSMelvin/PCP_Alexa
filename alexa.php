@@ -35,9 +35,12 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
 
   $response = $array;
 
+  echo json_encode($response);
+
 }
 else{
-  $delegate = '{
+  ?>
+  {
       "version": "1.0",
       "sessionAttributes": {},
       "response": {
@@ -51,8 +54,8 @@ else{
           "reprompt": null,
           "shouldEndSession": false
       }
-  }';
-  $response = $delegate;
+  }
+  <?php
 }
 
 
@@ -60,6 +63,6 @@ else{
 
 
 
-echo json_encode($response);
+
 
 ?>
