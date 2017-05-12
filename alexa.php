@@ -3,7 +3,7 @@ require 'functions.php';
 header('Content-Type: application/json');
 
 $data = json_decode( file_get_contents('php://input') );
-$ssml = "<speak>Empty</speak>";
+$ssml = "<speak>melvin is a bad programmer</speak>";
 
 // $ssml = "<speak>Empty</speak>";
 // if(isset($data['request']['intent']['name'])){
