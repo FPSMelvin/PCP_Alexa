@@ -5,17 +5,17 @@ header('Content-Type: application/json');
 $data = json_decode( file_get_contents('php://input') );
 $ssml = "<speak>testing</speak>";
 
-if (isset($data)){
-  $name = $data['request']['intent']['name'];
-  echo json_encode($name);
-  die();
-}
+// if (isset($data)){
+//   $name = $data['request']['intent']['name'];
+//   echo json_encode($name);
+//   die();
+// }
 
 
-if(isset($data['request']['intent']['name'])){
-       $name = $data['request']['intent']['name'];
-
-       var_dump($name);
+// if(isset($data['request']['intent']['name'])){
+//        $name = $data['request']['intent']['name'];
+//
+//        var_dump($name);
 
       //  switch ($name) {
       //     case "NextAppointment":
@@ -45,7 +45,7 @@ if(isset($data['request']['intent']['name'])){
       //  );
       //  $response = $array;
       //  echo json_encode($response);
-}
+//}
 
 
 
