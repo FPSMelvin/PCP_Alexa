@@ -5,6 +5,8 @@ header('Content-Type: application/json');
 $data = json_decode( file_get_contents('php://input') );
 $ssml = "<speak>testing</speak>";
 
+
+
 if(isset($data['request']['intent']['name'])){
        $name = $data['request']['intent']['name'];
 
@@ -25,12 +27,26 @@ if(isset($data['request']['intent']['name'])){
               $ssml = "<speak>Empty</speak>";
 
        }
+
+       $array = array(
+          "response" => array(
+              "outputSpeech" => array(
+                  "type" => "SSML",
+                  "ssml" => $ssml
+              )
+          )
+       );
+       $response = $array;
+       echo json_encode($response);
 }
+
+
+
 
 if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
 
-    
+
 
 ?>
   {
