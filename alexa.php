@@ -5,31 +5,36 @@ header('Content-Type: application/json');
 $data = json_decode( file_get_contents('php://input') );
 
 
+$ssml = "<speak>Empty</speak>";
+$name   = $data['request']['intent']['name'];
+
+switch ($name) {
+   case "NextAppointment":
+       $ssml = nextAppointment();
+       break;
+   case "DailyScheduleIntent":
+      if (isset($json['request']['intent']['slots']['day']['value'])) {
+         $day = $json['request']['intent']['slots']['day']['value'];
+         $ssml = dailySchedule($day);
+       }else{
+         $delegate = true;
+         //$ssml = errorMessage();
+       }
+       break;
+   case "testIntent":
+       $ssml = testGeluid();
+       break;
+   default:
+       $ssml = "<speak>Empty</speak>";
+
+}
+
+
+
+
 if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
     
-    $ssml = "<speak>Empty</speak>";
-    $name   = $data['request']['intent']['name'];
     
-    switch ($name) {
-       case "NextAppointment":
-           $ssml = nextAppointment();
-           break;
-       case "DailyScheduleIntent":
-          if (isset($json['request']['intent']['slots']['day']['value'])) {
-             $day = $json['request']['intent']['slots']['day']['value'];
-             $ssml = dailySchedule($day);
-           }else{
-             $delegate = true;
-             //$ssml = errorMessage();
-           }
-           break;
-       case "testIntent":
-           $ssml = testGeluid();
-           break;
-       default:
-           $ssml = "<speak>Empty</speak>";
-
-   }
 ?>
   {
       "version": "1.0",
