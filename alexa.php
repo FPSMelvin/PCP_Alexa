@@ -37,7 +37,7 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
       "response": {
           "outputSpeech": {
               "type": "SSML",
-              "ssml": "<speak>Empty</speak>"
+              "ssml": "<?php echo $ssml;?>"
           },
           "card": {
               "type": "Simple",
