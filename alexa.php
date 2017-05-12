@@ -5,13 +5,8 @@ header('Content-Type: application/json');
 $data = json_decode( file_get_contents('php://input') );
 $ssml = "<speak>testing</speak>";
 
-
-
-if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
-
-
-    if(isset($data['request']['intent']['name'])){
-       $name   = $data['request']['intent']['name'];
+if(isset($data['request']['intent']['name'])){
+       $name = $data['request']['intent']['name'];
 
        switch ($name) {
           case "NextAppointment":
@@ -30,7 +25,12 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
               $ssml = "<speak>Empty</speak>";
 
        }
-    }
+}
+
+if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
+
+
+    
 
 ?>
   {
