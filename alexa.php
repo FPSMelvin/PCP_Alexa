@@ -52,7 +52,7 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
               $ssml = nextAppointment();
               break;
           case "DailyScheduleIntent":
-              $day = $json['request']['intent']['slots']['day']['value'];
+              $day = $data['request']['intent']['slots']['day']['value'];
               $ssml = dailySchedule($day);
             //  if (isset($json['request']['intent']['slots']['day']['value'])) {
             //     $day = $json['request']['intent']['slots']['day']['value'];
