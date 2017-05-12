@@ -10,34 +10,36 @@ $ssml = "<speak>testing</speak>";
 if(isset($data['request']['intent']['name'])){
        $name = $data['request']['intent']['name'];
 
-       switch ($name) {
-          case "NextAppointment":
-              $ssml = nextAppointment();
-              break;
-          case "DailyScheduleIntent":
-             if (isset($json['request']['intent']['slots']['day']['value'])) {
-                $day = $json['request']['intent']['slots']['day']['value'];
-                $ssml = dailySchedule($day);
-              }
-              break;
-          case "testIntent":
-              $ssml = testGeluid();
-              break;
-          default:
-              $ssml = "<speak>Empty</speak>";
+       var_dump($name);
 
-       }
-
-       $array = array(
-          "response" => array(
-              "outputSpeech" => array(
-                  "type" => "SSML",
-                  "ssml" => $ssml
-              )
-          )
-       );
-       $response = $array;
-       echo json_encode($response);
+      //  switch ($name) {
+      //     case "NextAppointment":
+      //         $ssml = nextAppointment();
+      //         break;
+      //     case "DailyScheduleIntent":
+      //        if (isset($json['request']['intent']['slots']['day']['value'])) {
+      //           $day = $json['request']['intent']['slots']['day']['value'];
+      //           $ssml = dailySchedule($day);
+      //         }
+      //         break;
+      //     case "testIntent":
+      //         $ssml = testGeluid();
+      //         break;
+      //     default:
+      //         $ssml = "<speak>Empty</speak>";
+       //
+      //  }
+       //
+      //  $array = array(
+      //     "response" => array(
+      //         "outputSpeech" => array(
+      //             "type" => "SSML",
+      //             "ssml" => $ssml
+      //         )
+      //     )
+      //  );
+      //  $response = $array;
+      //  echo json_encode($response);
 }
 
 
