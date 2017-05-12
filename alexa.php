@@ -45,9 +45,9 @@ $ssml = "<speak>testing</speak>";
 
 if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
-      $name = $data['request']['intent']['name'];
+      $name = $data->request->intent->name;
 
-      if ($name == "NextAppointment"){
+      if ($name == "DailyScheduleIntent"){
         $ssml = nextAppointment();
       }
 
