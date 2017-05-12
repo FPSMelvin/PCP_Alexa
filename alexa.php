@@ -13,8 +13,8 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
       "sessionAttributes": {},
       "response": {
           "outputSpeech": {
-              "type": "PlainText",
-              "text": "This will be fun. hiking from Seattle to Portland on 2017-04-21"
+              "type": "SSML",
+              "ssml": "<speak>Hello I'm Milo What can I help you with today</speak>"
           },
           "card": {
               "type": "Simple",
