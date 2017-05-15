@@ -45,26 +45,29 @@ $ssml = "<speak>testing</speak>";
 
 if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
-      $name = $data->request->intent->name;
+    $name = $data->request->intent->name;
 
-       switch ($name) {
-          case "NextAppointment":
-              $ssml = nextAppointment();
-              break;
-          case "DailyScheduleIntent":
-              $day = $data->request->intent->slots->day->value;
-              $ssml = dailySchedule($day);
+    switch ($name) {
+        case "NextAppointment":
+            $ssml = nextAppointment();
+            break;
+        case "DailyScheduleIntent":
+            $day = $data->request->intent->slots->day->value;
+            $ssml = dailySchedule($day);
             //  if (isset($json['request']['intent']['slots']['day']['value'])) {
             //     $day = $json['request']['intent']['slots']['day']['value'];
             //     $ssml = dailySchedule($day);
             //   }
-              break;
-          case "testIntent":
-              $ssml = testGeluid();
-              break;
-          default:
-              $ssml = "<speak>Empty</speak>";
-       }
+            break;
+        case "testIntent":
+            $ssml = testGeluid();
+            break;
+        case "refuelIntent":
+            $ssml = refuelAppointment();
+            break;
+        default:
+            $ssml = "<speak>Empty</speak>";
+    }
 
       // if ($name == "DailyScheduleIntent"){
       //   $ssml = nextAppointment();

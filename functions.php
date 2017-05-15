@@ -42,3 +42,8 @@ function testGeluid(){
    $ssml = "<speak>Uptempo is the tempo <audio src='https://afty.nl/alexa/PCP_Alexa/uptempoNEW.mp3' /> yessss </speak>";
    return $ssml;
 }
+
+function refuelAppointment(){
+    $ssml = "<speak>Gas op dii lolly</speak>";
+    return $ssml;
+}
