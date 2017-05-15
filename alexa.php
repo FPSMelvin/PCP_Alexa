@@ -48,6 +48,9 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
     $name = $data->request->intent->name;
 
     switch ($name) {
+        case "refuelIntent":
+          $ssml = refuelAppointment();
+          break;
         case "NextAppointment":
             $ssml = nextAppointment();
             break;
@@ -61,9 +64,6 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
             break;
         case "testIntent":
             $ssml = testGeluid();
-            break;
-        case "refuelIntent":
-            $ssml = refuelAppointment();
             break;
         default:
             $ssml = "<speak>Empty</speak>";
