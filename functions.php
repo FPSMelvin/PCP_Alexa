@@ -27,9 +27,9 @@ function nextAppointment(){
 
 function dailySchedule($dayParam, $setAlarmTime){
 
-    $ssml = "<speak>I don't know what your schedule is for " . $dayParam . ", sorry.</speak>";
+    $ssml = "<speak>Allright done, good night!</speak>";
     if(isset($setAlarmTime)){
-        $ssml = "<speak>Allright, I have set your alarm at " . $setAlarmTime . "</speak>";
+        $ssml = "<speak>Allright, I have set your alarm at " . $setAlarmTime . " for " . $dayParam . "</speak>";
     }
 
     return $ssml;
