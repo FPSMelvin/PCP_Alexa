@@ -26,11 +26,11 @@ if (isset($data) && isset($data->request)){
           case "DailyScheduleIntent":
               $day = $data->request->intent->slots->day->value;
               $alarmTime = null;
-              
-              if(isset($data->request->intent->slots->setAlarmTime->value;)){
+
+              if(isset($data->request->intent->slots->setAlarmTime->value)){
                   $alarmTime = $data->request->intent->slots->setAlarmTime->value;
               }
-              
+
               if (isset($day)){
                 $ssml = dailySchedule($day, $alarmTime);
               }else{
