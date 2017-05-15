@@ -14,7 +14,7 @@ if (isset($data) && isset($data->request)){
 
   switch ($name) {
       case "testIntent":
-        $ssml = testGeluid();
+        $ssml = nextAppointment();
           $array = array(
               "response" => array(
                   "outputSpeech" => array(
