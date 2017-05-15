@@ -96,7 +96,7 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
 }
 else{
 
-
+    $name = $data->request->intent->name;
 
   switch ($name) {
       case "testIntent":
