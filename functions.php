@@ -44,6 +44,6 @@ function testGeluid(){
 }
 
 function refuelAppointment(){
-    $ssml = "<speak>Gas op dii lolly</speak>";
+    $ssml = "<speak>Ok, message sent!</speak>";
     return $ssml;
 }
