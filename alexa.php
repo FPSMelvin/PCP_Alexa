@@ -96,7 +96,7 @@ if (isset($data) && isset($data->request)) {
                         "text" => ""
                     )
                 ),
-                "shouldEndSession" => true
+                "shouldEndSession" => false
             )
         );
         echo json_encode($array);
