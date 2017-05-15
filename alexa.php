@@ -100,7 +100,6 @@ if (isset($data) && isset($data->request)) {
             )
         );
         echo json_encode($array);
-        exit();
     }
 
         $name = $data->request->intent->name;
