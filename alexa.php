@@ -96,6 +96,37 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
 }
 else{
 
+
+
+  switch ($name) {
+      case "refuelIntent":
+        $ssml = refuelAppointment();
+          $array = array(
+              "response" => array(
+                  "outputSpeech" => array(
+                      "type" => "SSML",
+                      "ssml" => $ssml
+                      )
+              )
+          );
+          header('Content-Type: application/json');
+          echo json_encode($array);
+        break;
+        exit();
+      default:
+        $array = array(
+            "response" => array(
+                "outputSpeech" => array(
+                    "type" => "SSML",
+                    "ssml" => $ssml
+                    )
+            )
+        );
+        header('Content-Type: application/json');
+        echo json_encode($array);
+        exit();
+  }
+
   ?>
   {
       "version": "1.0",
