@@ -24,8 +24,8 @@ if (isset($data) && isset($data->request)){
               )
           );
           echo json_encode($array);
+          exit();
         break;
-        exit();
         default:
             $ssml = "<speak>Empty</speak>";
               $array = array(
