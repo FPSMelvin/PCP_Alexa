@@ -95,9 +95,6 @@ if (isset($data) && isset($data->request){
         }<?php
     }
 
-<<<<<<< HEAD
-
-=======
 ?>
   {
       "version": "1.0",
@@ -125,7 +122,7 @@ if (isset($data) && isset($data->request){
 }
 else{
 
-    $name = $data->request->intent->name;
+  $name = $data->request->intent->name;
 
   switch ($name) {
       case "testIntent":
@@ -156,13 +153,10 @@ else{
               "shouldEndSession": false
           }
       }<?php
->>>>>>> origin/master
   }
 
 
 } // end eerste if
-
-
 
 
 
