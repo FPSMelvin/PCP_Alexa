@@ -24,7 +24,7 @@ if (isset($data) && isset($data->request)){
               if (isset($day)){
                 $ssml = dailySchedule($day);
               }else{
-                $ssml = "<speak>I did not understand the day</speak>"
+                $ssml = "<speak>I did not understand the day</speak>";
               }
               break;
           case "testIntent":
