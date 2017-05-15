@@ -46,7 +46,7 @@ if (isset($data) && isset($data->request)){
             "card": {
                 "type": "Simple",
                 "title": "SessionSpeechlet - Travel booking",
-                "content": "<?php echo $data;?>"
+                "content": "test card"
             },
             "reprompt": {
                 "outputSpeech": {
