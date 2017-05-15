@@ -20,9 +20,19 @@ function nextAppointment(){
    return $ssml;
 }
 
-function dailySchedule($dayParam){
-   $ssml = "<speak>I don't know what your schedule is for " . $dayParam . ", sorry.</speak>";
-   return $ssml;
+function dailySchedule($dayParam, $setAlarmTime){
+    $ssml = "<speak>Allright, done. Good night!</speak>";
+    return $ssm;
+}
+
+function dailySchedule($dayParam, $setAlarmTime){
+    
+    $ssml = "<speak>I don't know what your schedule is for " . $dayParam . ", sorry.</speak>";
+    if(isset($setAlarmTime)){
+        $ssml = "<speak>Allright, I have set your alarm at " . $setAlarmTime . "</speak>";
+    }
+
+    return $ssml;
 }
 
 function errorMessage($var){
