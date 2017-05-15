@@ -41,7 +41,7 @@ if (isset($data) && isset($data->request)) {
                 $ssml = testGeluid();
                 break;
             default:
-                $ssml = "<speak>Empty Empty Empty</speak>";
+                $ssml = "<speak>see you later aligator</speak>";
         }
 
         // put content into an array
@@ -76,7 +76,7 @@ if (isset($data) && isset($data->request)) {
       $launchRequest = $data->request->type;
 
       if ($launchRequest == "LaunchRequest"){
-        $ssml = "<speak>hello this is <emphasis level='strong'>milo</emphasis> . What can i help you with today</speak>";
+        $ssml = '<speak>You say, <phoneme alphabet="ipa" ph="pɪˈkɑːn">pecan</phoneme>. I say, <phoneme alphabet="ipa" ph="ˈpi.kæn">pecan</phoneme>.</speak>';
         $array = array(
             "version" => "1.0",
             "sessionAttributes" => array(),
