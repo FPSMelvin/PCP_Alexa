@@ -76,7 +76,7 @@ if (isset($data) && isset($data->request)) {
       $launchRequest = $data->request->type;
 
       if ($launchRequest == "LaunchRequest"){
-        $ssml = "<speak>yoo this is milo</speak>";
+        $ssml = "<speak>hello this is <emphasis level='strong'>milo</emphasis> . What can i help you with today</speak>";
         $array = array(
             "version" => "1.0",
             "sessionAttributes" => array(),
