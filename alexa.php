@@ -62,9 +62,9 @@ if (isset($data) && isset($data->request){
   }
   else{
 
-
-
-    switch ($name) {
+      $name = $data->request->intent->name;
+    
+      switch ($name) {
         case "testIntent":
           $ssml = testGeluid();
             $array = array(
