@@ -95,7 +95,68 @@ if (isset($data) && isset($data->request){
         }<?php
     }
 
+<<<<<<< HEAD
 
+=======
+?>
+  {
+      "version": "1.0",
+      "sessionAttributes": {},
+      "response": {
+          "outputSpeech": {
+              "type": "SSML",
+              "ssml": "<?php echo $ssml;?>"
+          },
+          "card": {
+              "type": "Simple",
+              "title": "SessionSpeechlet - Travel booking",
+              "content": "SessionSpeechlet - This will be fun. hiking from Seattle to Portland on 2017-04-21"
+          },
+          "reprompt": {
+              "outputSpeech": {
+                  "type": "PlainText",
+                  "text": ""
+              }
+          },
+          "shouldEndSession": true
+      }
+  }
+  <?php
+}
+else{
+
+    $name = $data->request->intent->name;
+
+  switch ($name) {
+      case "testIntent":
+        $ssml = testGeluid();
+          $array = array(
+              "response" => array(
+                  "outputSpeech" => array(
+                      "type" => "SSML",
+                      "ssml" => $ssml
+                      )
+              )
+          );
+          echo json_encode($array);
+        break;
+      default:
+      ?>{
+          "version": "1.0",
+          "sessionAttributes": {},
+          "response": {
+              "outputSpeech": null,
+              "card": null,
+              "directives": [
+                  {
+                      "type": "Dialog.Delegate"
+                  }
+              ],
+              "reprompt": null,
+              "shouldEndSession": false
+          }
+      }<?php
+>>>>>>> origin/master
   }
 
 
