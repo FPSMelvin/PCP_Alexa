@@ -9,6 +9,36 @@ $ssml;
 // check if there is data sent by Alexa
 if (isset($data) && isset($data->request)) {
 
+
+    $launchRequest = $data->request->type;
+
+      if ($launchRequest == "LaunchRequest"){
+        $ssml = "<speak>yoo this is milo</speak>";
+        $array = array(
+            "version" => "1.0",
+            "sessionAttributes" => array(),
+            "response" => array(
+                "outputSpeech" => array(
+                    "type" => "SSML",
+                    "ssml" => $ssml
+                ),
+                "card" => array(
+                    "type" => "Simple",
+                    "title" => "SessionSpeechlet - Travel booking",
+                    "content" => "test card"
+                ),
+                "reprompt" => array(
+                    "outputSpeech" => array(
+                        "type" => "PlainText",
+                        "text" => ""
+                    )
+                ),
+                "shouldEndSession" => true
+            )
+        );
+        echo json_encode($array);
+    }
+
     // check if dialogstate is completed
     if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
