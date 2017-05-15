@@ -10,10 +10,10 @@ $ssml;
 if (isset($data) && isset($data->request)) {
 
 
-    $launchRequest = $data->request->type;
+      $launchRequest = $data->request->type;
 
       if ($launchRequest == "LaunchRequest"){
-        $ssml = "<speak>yoo this is milo</speak>";
+        $ssml = "<speak> yoo this is milo </speak>";
         $array = array(
             "version" => "1.0",
             "sessionAttributes" => array(),
