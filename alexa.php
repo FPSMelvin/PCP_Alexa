@@ -40,6 +40,20 @@ if (isset($data) && isset($data->request)) {
             case "testIntent":
                 $ssml = testGeluid();
                 break;
+            case "ShortSchedule":
+                $day       = $data->request->intent->slots->day->value;
+                $alarmTime = null;
+
+                if (isset($data->request->intent->slots->setAlarmTime->value)) {
+                    $alarmTime = $data->request->intent->slots->setAlarmTime->value;
+                }
+
+                if (isset($day)) {
+                    $ssml = shortSchedule($day, $alarmTime);
+                } else {
+                    $ssml = "<speak>I did not understand the day</speak>";
+                }
+                break;
             default:
                 $ssml = "<speak>see you later aligator</speak>";
         }

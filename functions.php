@@ -35,6 +35,16 @@ function dailySchedule($dayParam, $setAlarmTime){
     return $ssml;
 }
 
+function shortSchedule($dayParam, $setAlarmTime){
+
+    $ssml = "<speak>Allright, good night!</speak>";
+    if(isset($setAlarmTime)){
+        $ssml = "<speak>Allright, good night!</speak>";
+    }
+
+    return $ssml;
+}
+
 function errorMessage($var){
    if(!isset($var)){
        $var = "00";
