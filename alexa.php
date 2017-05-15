@@ -7,7 +7,7 @@ $ssml;
 
 
 
-if (isset($data) && isset($data->request){
+if (isset($data) && isset($data->request)){
 
   if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
@@ -63,7 +63,7 @@ if (isset($data) && isset($data->request){
   else{
 
       $name = $data->request->intent->name;
-    
+
       switch ($name) {
         case "testIntent":
           $ssml = testGeluid();
