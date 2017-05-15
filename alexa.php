@@ -99,8 +99,8 @@ else{
 
 
   switch ($name) {
-      case "refuelIntent":
-        $ssml = refuelAppointment();
+      case "testIntent":
+        $ssml = testGeluid();
           $array = array(
               "response" => array(
                   "outputSpeech" => array(
@@ -109,41 +109,27 @@ else{
                       )
               )
           );
-          header('Content-Type: application/json');
           echo json_encode($array);
         break;
-        exit();
       default:
-        $array = array(
-            "response" => array(
-                "outputSpeech" => array(
-                    "type" => "SSML",
-                    "ssml" => $ssml
-                    )
-            )
-        );
-        header('Content-Type: application/json');
-        echo json_encode($array);
-        exit();
+      ?>{
+          "version": "1.0",
+          "sessionAttributes": {},
+          "response": {
+              "outputSpeech": null,
+              "card": null,
+              "directives": [
+                  {
+                      "type": "Dialog.Delegate"
+                  }
+              ],
+              "reprompt": null,
+              "shouldEndSession": false
+          }
+      }<?php
   }
 
-  ?>
-  {
-      "version": "1.0",
-      "sessionAttributes": {},
-      "response": {
-          "outputSpeech": null,
-          "card": null,
-          "directives": [
-              {
-                  "type": "Dialog.Delegate"
-              }
-          ],
-          "reprompt": null,
-          "shouldEndSession": false
-      }
-  }
-  <?php
+
 }
 
 
