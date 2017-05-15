@@ -90,7 +90,7 @@ if (isset($data) && isset($data->request)) {
       $launchRequest = $data->request->type;
 
       if ($launchRequest == "LaunchRequest"){
-        $ssml = '<speak>You say, <phoneme alphabet="ipa" ph="pɪˈkɑːn">pecan</phoneme>. I say, <phoneme alphabet="ipa" ph="ˈpi.kæn">pecan</phoneme>.</speak>';
+        $ssml = '<speak>Hello this is Milo</speak>';
         $array = array(
             "version" => "1.0",
             "sessionAttributes" => array(),
