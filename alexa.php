@@ -13,7 +13,7 @@ if (isset($data) && isset($data->request)){
       $name = $data->request->intent->name;
 
       switch ($name) {
-          case "refuelIntent":
+          case "RefuelIntent":
             $ssml = refuelAppointment();
             break;
           case "NextAppointment":
