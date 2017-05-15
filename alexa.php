@@ -3,7 +3,7 @@ require 'functions.php';
 header('Content-Type: application/json');
 
 $data = json_decode( file_get_contents('php://input') );
-$ssml = "<speak>testing</speak>";
+$ssml;
 
 // if(isset($data['request']['intent']['name'])){
 //        $name = $data['request']['intent']['name'];
@@ -68,10 +68,6 @@ if (isset($data) && isset($data->request) && isset($data->request->dialogState) 
         default:
             $ssml = "<speak>Empty</speak>";
     }
-
-      // if ($name == "DailyScheduleIntent"){
-      //   $ssml = nextAppointment();
-      // }
 
 ?>
   {
