@@ -19,8 +19,8 @@ if (isset($data) && isset($data->request)) {
             "sessionAttributes" => array(),
             "response" => array(
                 "outputSpeech" => array(
-                    "type" => "SSML",
-                    "ssml" => $ssml
+                    "type" => "text",
+                    "text" => $ssml
                 ),
                 "card" => array(
                     "type" => "Simple",
