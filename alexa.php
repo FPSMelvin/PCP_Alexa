@@ -13,27 +13,13 @@ if (isset($data) && isset($data->request)) {
       $launchRequest = $data->request->type;
 
       if ($launchRequest == "LaunchRequest"){
-        $ssml = "<speak> yoo this is milo </speak>";
+        $ssml = "<speak>yoo this is milo</speak>";
         $array = array(
-            "version" => "1.0",
-            "sessionAttributes" => array(),
             "response" => array(
                 "outputSpeech" => array(
-                    "type" => "text",
-                    "text" => $ssml
-                ),
-                "card" => array(
-                    "type" => "Simple",
-                    "title" => "SessionSpeechlet - Travel booking",
-                    "content" => "test card"
-                ),
-                "reprompt" => array(
-                    "outputSpeech" => array(
-                        "type" => "PlainText",
-                        "text" => ""
-                    )
-                ),
-                "shouldEndSession" => true
+                    "type" => "SSML",
+                    "ssml" => $ssml
+                )
             )
         );
         echo json_encode($array);
