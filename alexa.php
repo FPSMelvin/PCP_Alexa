@@ -6,7 +6,7 @@ $data = json_decode( file_get_contents('php://input') );
 $ssml;
 
 
-// check if there is data
+// check if there is data sent by Alexa
 if (isset($data) && isset($data->request)){
 
   // check if dialogstate is completed
@@ -35,35 +35,37 @@ if (isset($data) && isset($data->request)){
               $ssml = testGeluid();
               break;
           default:
-              $ssml = "<speak>Empty</speak>";
+              $ssml = "<speak>Empty Empty Empty</speak>";
       }
 
-  ?>
-    {
-        "version": "1.0",
-        "sessionAttributes": {},
-        "response": {
-            "outputSpeech": {
-                "type": "SSML",
-                "ssml": "<?php echo $ssml;?>"
-            },
-            "card": {
-                "type": "Simple",
-                "title": "SessionSpeechlet - Travel booking",
-                "content": "test card"
-            },
-            "reprompt": {
-                "outputSpeech": {
-                    "type": "PlainText",
-                    "text": ""
-                }
-            },
-            "shouldEndSession": true
-        }
-    }
-    <?php
+      // put content into an array
+      $array = array(
+          "version" => "1.0",
+          "sessionAttributes" => array(),
+          "response" => array(
+              "outputSpeech" => array(
+                "type" => "SSML",
+                "ssml" => $ssml
+              ),
+              "card" => array(
+                "type" => "Simple",
+                "title" => "SessionSpeechlet - Travel booking",
+                "content" => "test card"
+              ),
+              "reprompt" => array(
+                "outputSpeech" => array(
+                  "type" => "PlainText",
+                  "text" => ""
+                )
+              ),
+              "shouldEndSession" => true
+          )
+      );
+      echo json_encode($array);
   }
-  else{
+
+  // dialogstate is not completed
+  else {
 
       $name = $data->request->intent->name;
 
@@ -98,5 +100,7 @@ if (isset($data) && isset($data->request)){
         }<?php
     }
   }
+
+
 }
 ?>
