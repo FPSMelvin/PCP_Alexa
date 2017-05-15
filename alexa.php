@@ -9,6 +9,38 @@ $ssml;
 
 if (isset($data) && isset($data->request)){
 
+
+  $name = $data->request->intent->name;
+
+  switch ($name) {
+      case "testIntent":
+        $ssml = testGeluid();
+          $array = array(
+              "response" => array(
+                  "outputSpeech" => array(
+                      "type" => "SSML",
+                      "ssml" => $ssml
+                      )
+              )
+          );
+          echo json_encode($array);
+        break;
+        exit();
+        default:
+            $ssml = "<speak>Empty</speak>";
+              $array = array(
+                  "response" => array(
+                      "outputSpeech" => array(
+                          "type" => "SSML",
+                          "ssml" => $ssml
+                          )
+                  )
+              );
+              echo json_encode($array);
+              exit();
+  }
+
+
   if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
       $name = $data->request->intent->name;
