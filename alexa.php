@@ -6,10 +6,9 @@ $data = json_decode( file_get_contents('php://input') );
 $ssml;
 
 
-
 if (isset($data) && isset($data->request)){
 
-    if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
+  if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
       $name = $data->request->intent->name;
 
@@ -22,11 +21,11 @@ if (isset($data) && isset($data->request)){
               break;
           case "DailyScheduleIntent":
               $day = $data->request->intent->slots->day->value;
-              $ssml = dailySchedule($day);
-              //  if (isset($json['request']['intent']['slots']['day']['value'])) {
-              //     $day = $json['request']['intent']['slots']['day']['value'];
-              //     $ssml = dailySchedule($day);
-              //   }
+              if (isset($day)){
+                $ssml = dailySchedule($day);
+              }else{
+                $ssml = "<speak>I did not understand the day</speak>"
+              }
               break;
           case "testIntent":
               $ssml = testGeluid();
@@ -47,7 +46,7 @@ if (isset($data) && isset($data->request)){
             "card": {
                 "type": "Simple",
                 "title": "SessionSpeechlet - Travel booking",
-                "content": "SessionSpeechlet - This will be fun. hiking from Seattle to Portland on 2017-04-21"
+                "content": "<?php echo $data;?>"
             },
             "reprompt": {
                 "outputSpeech": {
