@@ -83,21 +83,22 @@ if (isset($data) && isset($data->request)){
             echo json_encode($array);
           break;
         default:
-        ?>{
-            "version": "1.0",
-            "sessionAttributes": {},
-            "response": {
-                "outputSpeech": null,
-                "card": null,
-                "directives": [
-                    {
-                        "type": "Dialog.Delegate"
-                    }
-                ],
-                "reprompt": null,
-                "shouldEndSession": false
-            }
-        }<?php
+          $array = array(
+            'version' => '1.0',
+            'sessionAttributes' => array(),
+            'response' => array(
+              'outputSpeech' => NULL,
+              'card' => NULL,
+              'directives' =>
+                array(0 => array(
+                      'type' => 'Dialog.Delegate',
+                     ),
+                ),
+              'reprompt' => NULL,
+              'shouldEndSession' => false,
+            ),
+          );
+          echo json_encode($array);
     }
   }
 
