@@ -6,12 +6,16 @@ $data = json_decode( file_get_contents('php://input') );
 $ssml;
 
 
+// check if there is data
 if (isset($data) && isset($data->request)){
 
+  // check if dialogstate is completed
   if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
 
+      // retrieve intent name
       $name = $data->request->intent->name;
 
+      // check which string equals intent name from above
       switch ($name) {
           case "RefuelIntent":
             $ssml = refuelAppointment();
