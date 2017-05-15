@@ -20,10 +20,10 @@ function nextAppointment(){
    return $ssml;
 }
 
-function dailySchedule($dayParam){
-    $ssml = "<speak>Allright, done. Good night!</speak>";
-    return $ssm;
-}
+// function dailySchedule($dayParam){
+//     $ssml = "<speak>Allright, done. Good night!</speak>";
+//     return $ssm;
+// }
 
 function dailySchedule($dayParam, $setAlarmTime){
 
