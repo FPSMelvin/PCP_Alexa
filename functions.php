@@ -53,6 +53,6 @@ function testGeluid(){
 
 function refuelAppointment($time){
     //$ssml = "<speak>Ok, message sent!</speak>";
-    $ssml = "<speak>Alright, message sent that you'll be <say-as interpret-as='time'>" . $time . "</say-as> later</speak>";
+    $ssml = "<speak>Alright, message sent that you'll be <say-as interpret-as='time'>" . $time . "</say-as> minutes later</speak>";
     return $ssml;
 }
