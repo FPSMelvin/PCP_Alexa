@@ -131,27 +131,6 @@ if (isset($data) && isset($data->request)) {
                 );
                 echo json_encode($array);
                 break;
-            case "DailyScheduleIntent":
-            file_put_contents('test1.txt', $data, FILE_APPEND);
-                $array = array(
-                    "version" => "1.0",
-                    "sessionAttributes" => array(),
-                    "response" => array(
-                        "outputSpeech" => array(
-                            "type" => "PlainText",
-                            "text" => "You said you are leaving Seattle, right?",
-                        ),
-                    "shouldEndSession" => false,
-                    "directives" => array(
-                        0 => array(
-                            "type" => "Dialog.ConfirmSlot",
-                            "slotToConfirm" => "day",
-                        ),
-                    ),
-                  ),
-                );
-                echo json_encode($array);
-                break;
             default:
                 $array = array(
                     "version" => "1.0",
