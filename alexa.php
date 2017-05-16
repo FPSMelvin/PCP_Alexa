@@ -132,6 +132,7 @@ if (isset($data) && isset($data->request)) {
                 echo json_encode($array);
                 break;
             case "DailyScheduleIntent":
+            file_put_contents('test1.txt', $data.PHP_EOL, FILE_APPEND);
                 $array = array(
                     "version" => "1.0",
                     "sessionAttributes" => array(),
