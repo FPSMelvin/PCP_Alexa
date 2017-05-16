@@ -132,17 +132,17 @@ if (isset($data) && isset($data->request)) {
                 echo json_encode($array);
                 break;
             case "DailyScheduleIntent":
-                $array = array (
+                $array = array(
                     "version" => "1.0",
-                    "sessionAttributes" => array (),
-                    "response" => array (
-                        "outputSpeech" => array (
+                    "sessionAttributes" => array(),
+                    "response" => array(
+                        "outputSpeech" => array(
                             "type" => "PlainText",
-                            "text" => "You said you\"re leaving Seattle, right?",
+                            "text" => "You said you are leaving Seattle, right?",
                         ),
                     "shouldEndSession" => false,
-                    "directives" => array (
-                        0 => array (
+                    "directives" => array(
+                        0 => array(
                             "type" => "Dialog.ConfirmSlot",
                             "slotToConfirm" => "day",
                         ),
