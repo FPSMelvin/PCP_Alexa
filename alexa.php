@@ -66,9 +66,9 @@ if (isset($data) && isset($data->request)) {
             case "PublicTransportIntent":
                 $ssml = publicTransport();
                 break;
-            /*case "ShortPublicTransportIntent":
+            case "ShortPublicTransportIntent":
                 $ssml = shortPublicTransport();
-                break;*/
+                break;
             default:
                 $ssml = "<speak>see you later aligator</speak>";
         }
