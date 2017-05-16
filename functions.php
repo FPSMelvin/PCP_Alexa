@@ -17,7 +17,7 @@ function dailySchedule($dayParam, $setAlarmTime){
 
     $ssml = "<speak>Allright done, good night!</speak>";
     if(isset($setAlarmTime)){
-        $ssml = "<speak>Allright, I have set your alarm at <say-as interpret-as='time'>" . $setAlarmTime . "</say-as> for " . $dayParam . "</speak>";
+        $ssml = "<speak>Allright, I have set your alarm at <say-as interpret-as='time'>" . $setAlarmTime . "</say-as> for " . $dayParam .  ". Make sure to have breakfast. Breakfast makes your day better!</speak>";
     }
 
     return $ssml;
