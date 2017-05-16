@@ -16,27 +16,11 @@ if (isset($data) && isset($data->request)) {
         "type": "PlainText",
         "text": "You said you're leaving Seattle, right?"
       },
-      "reprompt": {
-          "outputSpeech": {
-              "type": "PlainText",
-              "text": ""
-          }
-      },
       "shouldEndSession": false,
       "directives": [
         {
           "type": "Dialog.ConfirmSlot",
-          "slotToConfirm": "day",
-          "updatedIntent": {
-            "name": "DailyScheduleIntent",
-            "confirmationStatus": "NONE",
-            "slots": {
-              "day": {
-                "name": "day",
-                "confirmationStatus": "NONE"
-              }
-            }
-          }
+          "slotToConfirm": "day"
         }
       ]
     }
