@@ -16,6 +16,12 @@ if (isset($data) && isset($data->request)) {
         "type": "PlainText",
         "text": "You said you're leaving Seattle, right?"
       },
+      "reprompt": {
+          "outputSpeech": {
+              "type": "PlainText",
+              "text": ""
+          }
+      },
       "shouldEndSession": false,
       "directives": [
         {
