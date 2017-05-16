@@ -17,9 +17,9 @@ if (isset($data) && isset($data->request)) {
 
         // check which string equals intent name from above
         switch ($name) {
-            case "ShortRefuelIntent":
-              $ssml = shortRefuelAppointment();
-              break;
+            // case "ShortRefuelIntent":
+            //   $ssml = shortRefuelAppointment();
+            //   break;
             case "RefuelIntent":
                 $refuelTime;
                 if($data->request->intent->slots->refuelTime->value){
