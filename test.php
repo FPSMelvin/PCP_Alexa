@@ -26,7 +26,7 @@ if (isset($data) && isset($data->request)) {
       "directives": [
         {
           "type": "Dialog.ConfirmSlot",
-          "slotToConfirm": "fromCity",
+          "slotToConfirm": "day",
           "updatedIntent": {
             "name": "DailyScheduleIntent",
             "confirmationStatus": "NONE",
