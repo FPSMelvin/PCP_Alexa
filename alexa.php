@@ -18,7 +18,11 @@ if (isset($data) && isset($data->request)) {
         // check which string equals intent name from above
         switch ($name) {
             case "RefuelIntent":
-                $ssml = refuelAppointment();
+                $refuelTime;
+                if($data->request->intent->slots->refuelTime->value){
+                    $refuelTime = $data->request->intent->slots->refuelTime->value;
+                }
+                $ssml = refuelAppointment($refuelTime);
                 break;
             case "NextAppointment":
                 $ssml = nextAppointment();
@@ -41,7 +45,7 @@ if (isset($data) && isset($data->request)) {
                 $ssml = testGeluid();
                 break;
             case "ShortSchedule":
-                $day       = $data->request->intent->slots->dayA->value;
+                $day       = $data->request->intent->slots->->value;
                 $alarmTime = null;
 
                 if (isset($data->request->intent->slots->setAlarmTimeA->value)) {

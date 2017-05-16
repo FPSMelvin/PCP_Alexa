@@ -51,8 +51,8 @@ function testGeluid(){
    return $ssml;
 }
 
-function refuelAppointment(){
+function refuelAppointment($time){
     //$ssml = "<speak>Ok, message sent!</speak>";
-    $ssml = "<speak>Alright, the navigation is adjusted, follow the road and you will arrive at a gas station in 5 minutes</speak>";
+    $ssml = "<speak>Alright, message sent that you'll be " . $time . " later</speak>";
     return $ssml;
 }
