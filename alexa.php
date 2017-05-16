@@ -149,6 +149,7 @@ if (isset($data) && isset($data->request)) {
                     ),
                   ),
                 );
+                echo json_encode($array);
                 break;
             default:
                 $array = array(
