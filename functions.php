@@ -42,7 +42,7 @@ function errorMessage($var){
 }
 
 function launchRequest(){
-   $ssml = "<speak>Hello I'm Milo What can I help you with today</speak>";
+   $ssml = "<speak>Hello, what can I help you with?</speak>";
    return $ssml;
 }
 
