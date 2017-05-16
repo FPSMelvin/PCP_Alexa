@@ -41,11 +41,11 @@ if (isset($data) && isset($data->request)) {
                 $ssml = testGeluid();
                 break;
             case "ShortSchedule":
-                $day       = $data->request->intent->slots->dayA->value;
+                $day       = $data->request->intent->slots->shortDay->value;
                 $alarmTime = null;
 
-                if (isset($data->request->intent->slots->setAlarmTimeA->value)) {
-                    $alarmTime = $data->request->intent->slots->setAlarmTimeA->value;
+                if (isset($data->request->intent->slots->shortSetAlarmTime->value)) {
+                    $alarmTime = $data->request->intent->slots->shortSetAlarmTime->value;
                 }
 
                 if (isset($day)) {
@@ -84,7 +84,7 @@ if (isset($data) && isset($data->request)) {
         echo json_encode($array);
     }
 
-    // dialogstate is not completed
+    // dialogstate is not completed ( still ongoing )
     else {
 
       $launchRequest = $data->request->type;
