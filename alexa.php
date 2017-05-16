@@ -17,18 +17,18 @@ if (isset($data) && isset($data->request)) {
 
         // check which string equals intent name from above
         switch ($name) {
-            // case "ShortRefuelIntent":
-            //   $ssml = shortRefuelAppointment();
-            //   break;
-            // case "RefuelIntent":
-            //     $refuelTime;
-            //     if($data->request->intent->slots->refuelTime->value){
-            //         $refuelTime = $data->request->intent->slots->refuelTime->value;
-            //         $myArray = explode(':', $refuelTime);
-            //         $time = intval($myArray[0]);
-            //     }
-            //     $ssml = refuelAppointment($time);
-            //     break;
+            case "ShortRefuelIntent":
+              $ssml = shortRefuelAppointment();
+              break;
+            case "RefuelIntent":
+                $refuelTime;
+                if($data->request->intent->slots->refuelTime->value){
+                    $refuelTime = $data->request->intent->slots->refuelTime->value;
+                    $myArray = explode(':', $refuelTime);
+                    $time = intval($myArray[0]);
+                }
+                $ssml = refuelAppointment($time);
+                break;
             case "NextAppointment":
                 $ssml = nextAppointment();
                 break;
