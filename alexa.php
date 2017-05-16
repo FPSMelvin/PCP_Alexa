@@ -26,6 +26,9 @@ if (isset($data) && isset($data->request)) {
                 }
                 $ssml = refuelAppointment($time);
                 break;
+            case "ShortRefuelIntent":
+                $ssml = shortRefuelAppointment();
+                break;
             case "NextAppointment":
                 $ssml = nextAppointment();
                 break;

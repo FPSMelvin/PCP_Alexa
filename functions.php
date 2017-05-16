@@ -56,3 +56,10 @@ function refuelAppointment($time){
     $ssml = "<speak>Alright, message sent that you'll be <say-as interpret-as='time'>" . $time . "</say-as> minutes later</speak>";
     return $ssml;
 }
+
+function shortRefuelAppointment(){
+    //$ssml = "<speak>Ok, message sent!</speak>";
+    $ssml = "<speak>Ok, done!</speak>";
+    return $ssml;
+}
+
