@@ -17,18 +17,15 @@ if (isset($data) && isset($data->request)) {
 
         // check which string equals intent name from above
         switch ($name) {
-            // case "ShortRefuelIntent":
-            //   $ssml = shortRefuelAppointment();
-            //   break;
-            // case "RefuelIntent":
-            //     $refuelTime;
-            //     if($data->request->intent->slots->refuelTime->value){
-            //         $refuelTime = $data->request->intent->slots->refuelTime->value;
-            //         $myArray = explode(':', $refuelTime);
-            //         $time = intval($myArray[0]);
-            //     }
-            //     $ssml = refuelAppointment($time);
-            //     break;
+            case "RefuelIntent":
+                $refuelTime;
+                if($data->request->intent->slots->refuelTime->value){
+                    $refuelTime = $data->request->intent->slots->refuelTime->value;
+                    $myArray = explode(':', $refuelTime);
+                    $time = intval($myArray[0]);
+                }
+                $ssml = refuelAppointment($time);
+                break;
             case "NextAppointment":
                 $ssml = nextAppointment();
                 break;
@@ -63,12 +60,6 @@ if (isset($data) && isset($data->request)) {
                     $ssml = "<speak>I did not understand the day</speak>";
                 }
                 break;
-            // case "PublicTransportIntent":
-            //     $ssml = publicTransport();
-            //     break;
-            // case "ShortPublicTransportIntent":
-            //     $ssml = shortPublicTransport();
-            //     break;
             default:
                 $ssml = "<speak>see you later aligator</speak>";
         }
@@ -105,7 +96,7 @@ if (isset($data) && isset($data->request)) {
       $launchRequest = $data->request->type;
 
       if ($launchRequest == "LaunchRequest"){
-        $ssml = '<speak>Hello, what can I help you with?</speak>';
+        $ssml = '<speak>Hello this is Milo</speak>';
         $array = array(
             "version" => "1.0",
             "sessionAttributes" => array(),
