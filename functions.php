@@ -68,3 +68,8 @@ function publicTransport(){
     $ssml = "<speak>No problem. Have a good trip!</speak>";
     return $ssml;
 }
+
+function shortPublicTransport(){
+    $ssml = "<speak>The train is the fastest way, travel information is sent to your phone.</speak>";
+    return $ssml;
+}
