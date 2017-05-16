@@ -45,11 +45,7 @@ if (isset($data) && isset($data->request)) {
                 $ssml = testGeluid();
                 break;
             case "ShortSchedule":
-<<<<<<< HEAD
-                $day       = $data->request->intent->slots->->value;
-=======
                 $day       = $data->request->intent->slots->shortDay->value;
->>>>>>> origin/master
                 $alarmTime = null;
 
                 // if (isset($data->request->intent->slots->shortSetAlarmTime->value)) {
