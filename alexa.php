@@ -132,22 +132,38 @@ if (isset($data) && isset($data->request)) {
                 echo json_encode($array);
                 break;
             case "DailyScheduleIntent":
-                
+                $array = array (
+                    "version" => "1.0",
+                    "sessionAttributes" => array (),
+                    "response" => array (
+                        "outputSpeech" => array (
+                            "type" => "PlainText",
+                            "text" => "You said you\"re leaving Seattle, right?",
+                        ),
+                    "shouldEndSession" => false,
+                    "directives" => array (
+                        0 => array (
+                            "type" => "Dialog.ConfirmSlot",
+                            "slotToConfirm" => "day",
+                        ),
+                    ),
+                  ),
+                );
                 break;
             default:
                 $array = array(
-                    'version' => '1.0',
-                    'sessionAttributes' => array(),
-                    'response' => array(
-                        'outputSpeech' => NULL,
-                        'card' => NULL,
-                        'directives' => array(
+                    "version" => "1.0",
+                    "sessionAttributes" => array(),
+                    "response" => array(
+                        "outputSpeech" => NULL,
+                        "card" => NULL,
+                        "directives" => array(
                             0 => array(
-                                'type' => 'Dialog.Delegate'
+                                "type" => "Dialog.Delegate"
                             )
                         ),
-                        'reprompt' => NULL,
-                        'shouldEndSession' => false
+                        "reprompt" => NULL,
+                        "shouldEndSession" => false
                     )
                 );
                 echo json_encode($array);
