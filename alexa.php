@@ -131,6 +131,9 @@ if (isset($data) && isset($data->request)) {
                 );
                 echo json_encode($array);
                 break;
+            case "DailyScheduleIntent":
+                
+                break;
             default:
                 $array = array(
                     'version' => '1.0',
