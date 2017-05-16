@@ -52,9 +52,9 @@ if (isset($data) && isset($data->request)) {
 >>>>>>> origin/master
                 $alarmTime = null;
 
-                if (isset($data->request->intent->slots->shortSetAlarmTime->value)) {
-                    $alarmTime = $data->request->intent->slots->shortSetAlarmTime->value;
-                }
+                // if (isset($data->request->intent->slots->shortSetAlarmTime->value)) {
+                //     $alarmTime = $data->request->intent->slots->shortSetAlarmTime->value;
+                // }
 
                 if (isset($day)) {
                     $ssml = shortSchedule($day, $alarmTime);
