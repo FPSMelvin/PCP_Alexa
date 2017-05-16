@@ -21,6 +21,8 @@ if (isset($data) && isset($data->request)) {
                 $refuelTime;
                 if($data->request->intent->slots->refuelTime->value){
                     $refuelTime = $data->request->intent->slots->refuelTime->value;
+                    $myArray = explode(':', $refuelTime);
+                    $time = $myArray[0];
                 }
                 $ssml = refuelAppointment($time);
                 break;
