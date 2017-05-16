@@ -22,7 +22,7 @@ if (isset($data) && isset($data->request)) {
                 if($data->request->intent->slots->refuelTime->value){
                     $refuelTime = $data->request->intent->slots->refuelTime->value;
                 }
-                $ssml = refuelAppointment($refuelTime);
+                $ssml = refuelAppointment($time);
                 break;
             case "NextAppointment":
                 $ssml = nextAppointment();
