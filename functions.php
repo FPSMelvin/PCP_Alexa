@@ -10,20 +10,8 @@ function nextAppointment(){
    $mins = floor($timeDifference / 60 % 60);
 
    $ssml = "<speak>Your next appointment is in " . $hours . " hours and " . $mins . " minutes.</speak>";
-   // $ssml = "<speak>
-   //             I want to tell you a secret.
-   //             <amazon:effect name='whispered'>I am not a real human.</amazon:effect>.
-   //             Can you believe it?
-   //         </speak>";
-
-
    return $ssml;
 }
-
-// function dailySchedule($dayParam){
-//     $ssml = "<speak>Allright, done. Good night!</speak>";
-//     return $ssm;
-// }
 
 function dailySchedule($dayParam, $setAlarmTime){
 
@@ -59,11 +47,12 @@ function launchRequest(){
 }
 
 function testGeluid(){
-   $ssml = "<speak>Uptempo is the tempo  yessss </speak>";
+   $ssml = "<speak>Uptempo is the tempo  <amazon:effect name='whispered'>yesssss</amazon:effect> </speak>";
    return $ssml;
 }
 
 function refuelAppointment(){
-    $ssml = "<speak>Ok, message sent!</speak>";
+    //$ssml = "<speak>Ok, message sent!</speak>";
+    $ssml = "<speak>Alright, the navigation is adjusted, follow the road and you will arrive at a gas station in 5 minutes</speak>";
     return $ssml;
 }
