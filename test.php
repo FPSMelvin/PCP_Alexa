@@ -28,29 +28,7 @@ if (isset($data) && isset($data->request)) {
 <?php
 }
 
-$melvinIsGay = array (
-  'version' => '1.0',
-  'sessionAttributes' =>
-  array (
-  ),
-  'response' =>
-  array (
-    'outputSpeech' =>
-    array (
-      'type' => 'PlainText',
-      'text' => 'You said you\'re leaving Seattle, right?',
-    ),
-    'shouldEndSession' => false,
-    'directives' =>
-    array (
-      0 =>
-      array (
-        'type' => 'Dialog.ConfirmSlot',
-        'slotToConfirm' => 'day',
-      ),
-    ),
-  ),
-);
+
 
 
  ?>
