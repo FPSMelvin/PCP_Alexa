@@ -132,37 +132,29 @@ if (isset($data) && isset($data->request)) {
 
     //Extended Public Transport Intent
     if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
-      ?>
-      <!-- {
-        "version": "1.0",
-        "sessionAttributes": {},
-        "response": {
-          "outputSpeech": {
-            "type": "PlainText",
-            "text": "From where did you want to start your trip?"
-          },
-          "shouldEndSession": false
-        }
-      } -->
+        $array = array (
+          'version' => '1.0',
+          'sessionAttributes' => array (),
+          'response' => array (
+              'outputSpeech' => array (
+            'type' => 'PlainText',
+                'text' => 'From where did you want to start your trip?',
+                ),
+            'shouldEndSession' => false,
+            'directives' => 
+            array (
+              0 => 
+              array (
+                'type' => 'Dialog.ElicitSlot',
+                'slotToElicit' => 'testNumber',
+              ),
+            ),
+          ),
+        );
+        echo json_encode($array);
+        
+        
 
-      {
-        "version": "1.0",
-        "sessionAttributes": {},
-        "response": {
-          "outputSpeech": {
-            "type": "PlainText",
-            "text": "From where did you want to start your trip?"
-          },
-          "shouldEndSession": false,
-          "directives": [
-            {
-              "type": "Dialog.ElicitSlot",
-              "slotToElicit": "testNumber"
-            }
-          ]
-        }
-      }
-<?php
 
       // $ssml = "<speak>Extended testing testing</speak>";
       // $array = array(
