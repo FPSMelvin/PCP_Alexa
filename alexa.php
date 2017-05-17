@@ -10,32 +10,32 @@ $ssml;
 if (isset($data) && isset($data->request)) {
 
     //Extended Public Transport Intent
-    if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
-      $ssml = "<speak>Extended testing testing</speak>";
-      $array = array(
-          "version" => "1.0",
-          "sessionAttributes" => array(),
-          "response" => array(
-              "outputSpeech" => array(
-                  "type" => "SSML",
-                  "ssml" => $ssml
-              ),
-              "card" => array(
-                  "type" => "Simple",
-                  "title" => "Session Milo",
-                  "content" => "test card"
-              ),
-              "reprompt" => array(
-                  "outputSpeech" => array(
-                      "type" => "PlainText",
-                      "text" => ""
-                  )
-              ),
-              "shouldEndSession" => true
-          )
-      );
-      echo json_encode($array);
-    }
+    // if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
+    //   $ssml = "<speak>Extended testing testing</speak>";
+    //   $array = array(
+    //       "version" => "1.0",
+    //       "sessionAttributes" => array(),
+    //       "response" => array(
+    //           "outputSpeech" => array(
+    //               "type" => "SSML",
+    //               "ssml" => $ssml
+    //           ),
+    //           "card" => array(
+    //               "type" => "Simple",
+    //               "title" => "Session Milo",
+    //               "content" => "test card"
+    //           ),
+    //           "reprompt" => array(
+    //               "outputSpeech" => array(
+    //                   "type" => "PlainText",
+    //                   "text" => ""
+    //               )
+    //           ),
+    //           "shouldEndSession" => true
+    //       )
+    //   );
+    //   echo json_encode($array);
+    // }
 
 
     // check if dialogstate is completed
