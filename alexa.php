@@ -8,6 +8,12 @@ $ssml;
 
 // check if there is data sent by Alexa
 if (isset($data) && isset($data->request)) {
+    
+    //Extended Public Transport Intent
+    if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
+        
+    }
+    
 
     // check if dialogstate is completed
     if (isset($data) && isset($data->request) && isset($data->request->dialogState) && $data->request->dialogState == 'COMPLETED') {
