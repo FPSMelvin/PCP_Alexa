@@ -17,18 +17,18 @@ if (isset($data) && isset($data->request)) {
 
         // check which string equals intent name from above
         switch ($name) {
-            // case "ShortRefuelIntent":
-            //   $ssml = shortRefuelAppointment();
-            //   break;
-            // case "RefuelIntent":
-            //     $refuelTime;
-            //     if($data->request->intent->slots->refuelTime->value){
-            //         $refuelTime = $data->request->intent->slots->refuelTime->value;
-            //         $myArray = explode(':', $refuelTime);
-            //         $time = intval($myArray[0]);
-            //     }
-            //     $ssml = refuelAppointment($time);
-            //     break;
+            case "ShortRefuelIntent":
+              $ssml = shortRefuelAppointment();
+              break;
+            case "RefuelIntent":
+                $refuelTime;
+                if($data->request->intent->slots->refuelTime->value){
+                    $refuelTime = $data->request->intent->slots->refuelTime->value;
+                    $myArray = explode(':', $refuelTime);
+                    $time = intval($myArray[0]);
+                }
+                $ssml = refuelAppointment($time);
+                break;
             case "NextAppointment":
                 $ssml = nextAppointment();
                 break;
@@ -102,7 +102,7 @@ if (isset($data) && isset($data->request)) {
         echo json_encode($array);
     }
 
-    // dialogstate is not completed ( still ongoing )
+    // dialogstate is not completed ( still ongoing ) dus als je zegt: Open Milo
     else {
 
       $launchRequest = $data->request->type;
@@ -136,97 +136,10 @@ if (isset($data) && isset($data->request)) {
 
 
 
-
+        // als de Dialog niet completed is EN het is geen launch request, kijken of het uberhaupt een dialog is.
         $name = $data->request->intent->name;
 
         switch ($name) {
-          case "ShortRefuelIntent":
-            $ssml = shortRefuelAppointment();
-            // put content into an array
-            $array = array(
-                "version" => "1.0",
-                "sessionAttributes" => array(),
-                "response" => array(
-                    "outputSpeech" => array(
-                        "type" => "SSML",
-                        "ssml" => $ssml
-                    ),
-                    "card" => array(
-                        "type" => "Simple",
-                        "title" => "Session Milo",
-                        "content" => "test card"
-                    ),
-                    "reprompt" => array(
-                        "outputSpeech" => array(
-                            "type" => "PlainText",
-                            "text" => ""
-                        )
-                    ),
-                    "shouldEndSession" => true
-                )
-            );
-            echo json_encode($array);
-            break;
-          case "RefuelIntent":
-              $refuelTime;
-              if($data->request->intent->slots->refuelTime->value){
-                  $refuelTime = $data->request->intent->slots->refuelTime->value;
-                  $myArray = explode(':', $refuelTime);
-                  $time = intval($myArray[0]);
-              }
-              $ssml = refuelAppointment($time);
-              // put content into an array
-              $array = array(
-                  "version" => "1.0",
-                  "sessionAttributes" => array(),
-                  "response" => array(
-                      "outputSpeech" => array(
-                          "type" => "SSML",
-                          "ssml" => $ssml
-                      ),
-                      "card" => array(
-                          "type" => "Simple",
-                          "title" => "Session Milo",
-                          "content" => "test card"
-                      ),
-                      "reprompt" => array(
-                          "outputSpeech" => array(
-                              "type" => "PlainText",
-                              "text" => ""
-                          )
-                      ),
-                      "shouldEndSession" => true
-                  )
-              );
-              echo json_encode($array);
-              break;
-            case "ParkingIntent":
-              $ssml = parkCar();
-              // put content into an array
-              $array = array(
-                  "version" => "1.0",
-                  "sessionAttributes" => array(),
-                  "response" => array(
-                      "outputSpeech" => array(
-                          "type" => "SSML",
-                          "ssml" => $ssml
-                      ),
-                      "card" => array(
-                          "type" => "Simple",
-                          "title" => "Session Milo",
-                          "content" => "test card"
-                      ),
-                      "reprompt" => array(
-                          "outputSpeech" => array(
-                              "type" => "PlainText",
-                              "text" => ""
-                          )
-                      ),
-                      "shouldEndSession" => true
-                  )
-              );
-              echo json_encode($array);
-              break;
             case "testIntent":
                 $ssml  = testGeluid();
                 $array = array(
