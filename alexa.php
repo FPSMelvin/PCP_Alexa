@@ -153,8 +153,6 @@ if (isset($data) && isset($data->request)) {
         // );
         // echo json_encode($array);
 
-
-
         ?>
              <!-- {
                "version": "1.0",
@@ -168,33 +166,6 @@ if (isset($data) && isset($data->request)) {
                }
              } -->
 
-              {
-                "version": "1.0",
-                "sessionAttributes": {},
-                "response": {
-                  "outputSpeech": {
-                    "type": "PlainText",
-                    "text": "From where did you want to start your trip?"
-                  },
-                  "shouldEndSession": false,
-                  "directives": [
-                    {
-                      "type": "Dialog.ElicitSlot",
-                      "slotToElicit": "testNumber"
-                      <!-- "updatedIntent": {
-                        "name": "ExtendedPublicTransportIntent",
-                        "confirmationStatus": "NONE",
-                        "slots": {
-                          "testNumber": {
-                            "name": "testNumber",
-                            "confirmationStatus": "NONE"
-                          }
-                        }
-                      } -->
-                    }
-                  ]
-                }
-              }
         <?php
     }
 
