@@ -133,7 +133,7 @@ if (isset($data) && isset($data->request)) {
     //Extended Public Transport Intent
     if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
       ?>
-      {
+      <!-- {
         "version": "1.0",
         "sessionAttributes": {},
         "response": {
@@ -143,7 +143,23 @@ if (isset($data) && isset($data->request)) {
           },
           "shouldEndSession": false
         }
-      };
+      } -->
+
+      {
+        "type": "Dialog.ElicitSlot",
+        "slotToElicit": "testNumber",
+        "updatedIntent": {
+          "name": "ExtendedPublicTransportIntent",
+          "confirmationStatus": "NONE",
+          "slots": {
+            "testNumber": {
+              "name": "testNumber",
+              "value": "10",
+              "confirmationStatus": "NONE"
+            }
+          }
+        }
+      }
 <?php
 
       // $ssml = "<speak>Extended testing testing</speak>";
