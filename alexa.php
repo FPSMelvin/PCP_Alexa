@@ -101,7 +101,25 @@ if (isset($data) && isset($data->request)) {
         );
         echo json_encode($array);
     }
-
+    elseif ($data->request->dialogState == 'STARTED' || $data->request->dialogState == 'IN_PROGRESS'){
+        $array = array(
+            "version" => "1.0",
+            "sessionAttributes" => array(),
+            "response" => array(
+                "outputSpeech" => NULL,
+                "card" => NULL,
+                "directives" => array(
+                    0 => array(
+                        "type" => "Dialog.Delegate"
+                    )
+                ),
+                "reprompt" => NULL,
+                "shouldEndSession" => false
+            )
+        );
+        echo json_encode($array);
+    }
+    
     // dialogstate is not completed ( still ongoing ) dus als je zegt: Open Milo
     else {
 
@@ -136,7 +154,7 @@ if (isset($data) && isset($data->request)) {
 
 
 
-        // als de Dialog niet completed is EN het is geen launch request, kijken of het uberhaupt een dialog is.
+       /* // als de Dialog niet completed is EN het is geen launch request, kijken of het uberhaupt een dialog is.
         $name = $data->request->intent->name;
 
         switch ($name) {
@@ -169,7 +187,7 @@ if (isset($data) && isset($data->request)) {
                     )
                 );
                 echo json_encode($array);
-        }
+        }*/
 
 
 
