@@ -70,7 +70,7 @@ function publicTransport(){
 }
 
 function parkCar(){
-    $ssml = "<speak>Ok, then just follow the nav. Go get ‘em champ!</speak>";
+    $ssml = "<speak>Ok, then just follow the navigation. Go get ‘em champ!</speak>";
     return $ssml;
 }
 //
