@@ -154,17 +154,17 @@ if (isset($data) && isset($data->request)) {
         // echo json_encode($array);
 
         ?>
-             <!-- {
+             {
                "version": "1.0",
                "sessionAttributes": {},
                "response": {
                  "outputSpeech": {
                    "type": "PlainText",
-                   "text": "From where did you want to start your trip?"
+                   "text": "extend testing testing"
                  },
                  "shouldEndSession": false
                }
-             } -->
+             }
 
         <?php
     }
