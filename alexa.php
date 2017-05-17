@@ -132,49 +132,70 @@ if (isset($data) && isset($data->request)) {
 
     //Extended Public Transport Intent
     if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
-        $array = array (
-          'version' => '1.0',
-          'sessionAttributes' => array (),
-          'response' => array (
-              'outputSpeech' => array (
-            'type' => 'PlainText',
-                'text' => 'From where did you want to start your trip?',
-                ),
-            'shouldEndSession' => false,
-            'directives' => 
-            array (
-              0 => 
-              array (
-                'type' => 'Dialog.ElicitSlot',
-                'slotToElicit' => 'testNumber',
-              ),
-            ),
-          ),
-        );
-        echo json_encode($array);
-        
-        
+        // $array = array (
+        //   'version' => '1.0',
+        //   'sessionAttributes' => array (),
+        //   'response' => array (
+        //       'outputSpeech' => array (
+        //     'type' => 'PlainText',
+        //         'text' => 'From where did you want to start your trip?',
+        //         ),
+        //     'shouldEndSession' => false,
+        //     'directives' =>
+        //     array (
+        //       0 =>
+        //       array (
+        //         'type' => 'Dialog.ElicitSlot',
+        //         'slotToElicit' => 'testNumber',
+        //       ),
+        //     ),
+        //   ),
+        // );
+        // echo json_encode($array);
 
 
-      // $ssml = "<speak>Extended testing testing</speak>";
-      // $array = array(
-      //     "version" => "1.0",
-      //     "sessionAttributes" => array(),
-      //     "response" => array(
-      //         "outputSpeech" => array(
-      //             "type" => "SSML",
-      //             "ssml" => $ssml
-      //         ),
-      //         "reprompt" => array(
-      //             "outputSpeech" => array(
-      //                 "type" => "PlainText",
-      //                 "text" => ""
-      //             )
-      //         ),
-      //         "shouldEndSession" => true
-      //     )
-      // );
-      // echo json_encode($array);
+
+        ?>
+             <!-- {
+               "version": "1.0",
+               "sessionAttributes": {},
+               "response": {
+                 "outputSpeech": {
+                   "type": "PlainText",
+                   "text": "From where did you want to start your trip?"
+                 },
+                 "shouldEndSession": false
+               }
+             } -->
+
+              {
+                "version": "1.0",
+                "sessionAttributes": {},
+                "response": {
+                  "outputSpeech": {
+                    "type": "PlainText",
+                    "text": "From where did you want to start your trip?"
+                  },
+                  "shouldEndSession": false,
+                  "directives": [
+                    {
+                      "type": "Dialog.ElicitSlot",
+                      "slotToElicit": "testNumber"
+                      <!-- "updatedIntent": {
+                        "name": "ExtendedPublicTransportIntent",
+                        "confirmationStatus": "NONE",
+                        "slots": {
+                          "testNumber": {
+                            "name": "testNumber",
+                            "confirmationStatus": "NONE"
+                          }
+                        }
+                      } -->
+                    }
+                  ]
+                }
+              }
+        <?php
     }
 
 
