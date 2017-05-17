@@ -134,6 +134,9 @@ if (isset($data) && isset($data->request)) {
         echo json_encode($array);
     }
 
+
+
+
         $name = $data->request->intent->name;
 
         switch ($name) {
@@ -154,15 +157,15 @@ if (isset($data) && isset($data->request)) {
               break;
             case "testIntent":
                 $ssml  = testGeluid();
-                $array = array(
-                    "response" => array(
-                        "outputSpeech" => array(
-                            "type" => "SSML",
-                            "ssml" => $ssml
-                        )
-                    )
-                );
-                echo json_encode($array);
+                // $array = array(
+                //     "response" => array(
+                //         "outputSpeech" => array(
+                //             "type" => "SSML",
+                //             "ssml" => $ssml
+                //         )
+                //     )
+                // );
+                // echo json_encode($array);
                 break;
             default:
                 $array = array(
@@ -182,6 +185,35 @@ if (isset($data) && isset($data->request)) {
                 );
                 echo json_encode($array);
         }
+
+        // put content into an array
+        $array = array(
+            "version" => "1.0",
+            "sessionAttributes" => array(),
+            "response" => array(
+                "outputSpeech" => array(
+                    "type" => "SSML",
+                    "ssml" => $ssml
+                ),
+                "card" => array(
+                    "type" => "Simple",
+                    "title" => "Session Milo",
+                    "content" => "test card"
+                ),
+                "reprompt" => array(
+                    "outputSpeech" => array(
+                        "type" => "PlainText",
+                        "text" => ""
+                    )
+                ),
+                "shouldEndSession" => true
+            )
+        );
+        echo json_encode($array);
+
+
+
+
     }
 
 
