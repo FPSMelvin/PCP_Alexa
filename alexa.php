@@ -142,6 +142,30 @@ if (isset($data) && isset($data->request)) {
         switch ($name) {
           case "ShortRefuelIntent":
             $ssml = shortRefuelAppointment();
+            // put content into an array
+            $array = array(
+                "version" => "1.0",
+                "sessionAttributes" => array(),
+                "response" => array(
+                    "outputSpeech" => array(
+                        "type" => "SSML",
+                        "ssml" => $ssml
+                    ),
+                    "card" => array(
+                        "type" => "Simple",
+                        "title" => "Session Milo",
+                        "content" => "test card"
+                    ),
+                    "reprompt" => array(
+                        "outputSpeech" => array(
+                            "type" => "PlainText",
+                            "text" => ""
+                        )
+                    ),
+                    "shouldEndSession" => true
+                )
+            );
+            echo json_encode($array);
             break;
           case "RefuelIntent":
               $refuelTime;
@@ -151,21 +175,69 @@ if (isset($data) && isset($data->request)) {
                   $time = intval($myArray[0]);
               }
               $ssml = refuelAppointment($time);
+              // put content into an array
+              $array = array(
+                  "version" => "1.0",
+                  "sessionAttributes" => array(),
+                  "response" => array(
+                      "outputSpeech" => array(
+                          "type" => "SSML",
+                          "ssml" => $ssml
+                      ),
+                      "card" => array(
+                          "type" => "Simple",
+                          "title" => "Session Milo",
+                          "content" => "test card"
+                      ),
+                      "reprompt" => array(
+                          "outputSpeech" => array(
+                              "type" => "PlainText",
+                              "text" => ""
+                          )
+                      ),
+                      "shouldEndSession" => true
+                  )
+              );
+              echo json_encode($array);
               break;
             case "ParkingIntent":
               $ssml = parkCar();
+              // put content into an array
+              $array = array(
+                  "version" => "1.0",
+                  "sessionAttributes" => array(),
+                  "response" => array(
+                      "outputSpeech" => array(
+                          "type" => "SSML",
+                          "ssml" => $ssml
+                      ),
+                      "card" => array(
+                          "type" => "Simple",
+                          "title" => "Session Milo",
+                          "content" => "test card"
+                      ),
+                      "reprompt" => array(
+                          "outputSpeech" => array(
+                              "type" => "PlainText",
+                              "text" => ""
+                          )
+                      ),
+                      "shouldEndSession" => true
+                  )
+              );
+              echo json_encode($array);
               break;
             case "testIntent":
                 $ssml  = testGeluid();
-                // $array = array(
-                //     "response" => array(
-                //         "outputSpeech" => array(
-                //             "type" => "SSML",
-                //             "ssml" => $ssml
-                //         )
-                //     )
-                // );
-                // echo json_encode($array);
+                $array = array(
+                    "response" => array(
+                        "outputSpeech" => array(
+                            "type" => "SSML",
+                            "ssml" => $ssml
+                        )
+                    )
+                );
+                echo json_encode($array);
                 break;
             default:
                 $array = array(
@@ -186,30 +258,7 @@ if (isset($data) && isset($data->request)) {
                 echo json_encode($array);
         }
 
-        // put content into an array
-        $array = array(
-            "version" => "1.0",
-            "sessionAttributes" => array(),
-            "response" => array(
-                "outputSpeech" => array(
-                    "type" => "SSML",
-                    "ssml" => $ssml
-                ),
-                "card" => array(
-                    "type" => "Simple",
-                    "title" => "Session Milo",
-                    "content" => "test card"
-                ),
-                "reprompt" => array(
-                    "outputSpeech" => array(
-                        "type" => "PlainText",
-                        "text" => ""
-                    )
-                ),
-                "shouldEndSession" => true
-            )
-        );
-        echo json_encode($array);
+
 
 
 
