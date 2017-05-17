@@ -141,22 +141,7 @@ if (isset($data) && isset($data->request)) {
             "type": "PlainText",
             "text": "From where did you want to start your trip?"
           },
-          "shouldEndSession": false,
-          "directives": [
-            {
-              "type": "Dialog.ElicitSlot",
-              "updatedIntent": {
-                "name": "ExtendedPublicTransportIntent",
-                "confirmationStatus": "NONE",
-                "slots": {
-                  "testNumber": {
-                    "name": "testNumber",
-                    "confirmationStatus": "NONE"
-                  }
-                }
-              }
-            }
-          ]
+          "shouldEndSession": false
         }
       };
 <?php
