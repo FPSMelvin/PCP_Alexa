@@ -70,7 +70,7 @@ function parkCar(){
 }
 
 function shortParkCar(){
-  $ssml = "<speak>There is a parkMobile zone, three hundred meters from your location. Just follow the navigation</speak>";
+  $ssml = "<speak>There is a parkMobile zone, three hundred meters from your current location. Just follow the navigation</speak>";
   return $ssml;
 }
 //
