@@ -132,30 +132,54 @@ if (isset($data) && isset($data->request)) {
 
     //Extended Public Transport Intent
     if ($data->request->intent->name == "ExtendedPublicTransportIntent"){
-      $ssml = "<speak>Extended testing testing</speak>";
-      $array = array(
-          "version" => "1.0",
-          "sessionAttributes" => array(),
-          "response" => array(
-              "outputSpeech" => array(
-                  "type" => "SSML",
-                  "ssml" => $ssml
-              ),
-              "card" => array(
-                  "type" => "Simple",
-                  "title" => "Session Milo",
-                  "content" => "test card"
-              ),
-              "reprompt" => array(
-                  "outputSpeech" => array(
-                      "type" => "PlainText",
-                      "text" => ""
-                  )
-              ),
-              "shouldEndSession" => true
-          )
-      );
-      echo json_encode($array);
+      ?>
+      {
+        "version": "1.0",
+        "sessionAttributes": {},
+        "response": {
+          "outputSpeech": {
+            "type": "PlainText",
+            "text": "From where did you want to start your trip?"
+          },
+          "shouldEndSession": false,
+          "directives": [
+            {
+              "type": "Dialog.ElicitSlot",
+              "updatedIntent": {
+                "name": "ExtendedPublicTransportIntent",
+                "confirmationStatus": "NONE",
+                "slots": {
+                  "testNumber": {
+                    "name": "testNumber",
+                    "confirmationStatus": "NONE"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      };
+<?php
+
+      // $ssml = "<speak>Extended testing testing</speak>";
+      // $array = array(
+      //     "version" => "1.0",
+      //     "sessionAttributes" => array(),
+      //     "response" => array(
+      //         "outputSpeech" => array(
+      //             "type" => "SSML",
+      //             "ssml" => $ssml
+      //         ),
+      //         "reprompt" => array(
+      //             "outputSpeech" => array(
+      //                 "type" => "PlainText",
+      //                 "text" => ""
+      //             )
+      //         ),
+      //         "shouldEndSession" => true
+      //     )
+      // );
+      // echo json_encode($array);
     }
 
 
