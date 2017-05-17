@@ -17,18 +17,18 @@ if (isset($data) && isset($data->request)) {
 
         // check which string equals intent name from above
         switch ($name) {
-            case "ShortRefuelIntent":
-              $ssml = shortRefuelAppointment();
-              break;
-            case "RefuelIntent":
-                $refuelTime;
-                if($data->request->intent->slots->refuelTime->value){
-                    $refuelTime = $data->request->intent->slots->refuelTime->value;
-                    $myArray = explode(':', $refuelTime);
-                    $time = intval($myArray[0]);
-                }
-                $ssml = refuelAppointment($time);
-                break;
+            // case "ShortRefuelIntent":
+            //   $ssml = shortRefuelAppointment();
+            //   break;
+            // case "RefuelIntent":
+            //     $refuelTime;
+            //     if($data->request->intent->slots->refuelTime->value){
+            //         $refuelTime = $data->request->intent->slots->refuelTime->value;
+            //         $myArray = explode(':', $refuelTime);
+            //         $time = intval($myArray[0]);
+            //     }
+            //     $ssml = refuelAppointment($time);
+            //     break;
             case "NextAppointment":
                 $ssml = nextAppointment();
                 break;
@@ -63,9 +63,9 @@ if (isset($data) && isset($data->request)) {
                     $ssml = "<speak>I did not understand the day</speak>";
                 }
                 break;
-            case "ParkingIntent":
-                $ssml = parkCar();
-                break;
+            // case "ParkingIntent":
+            //     $ssml = parkCar();
+            //     break;
             /*case "backpackIntent":
                 $ssml = publicTransport();
                 break;*/
@@ -87,7 +87,7 @@ if (isset($data) && isset($data->request)) {
                 ),
                 "card" => array(
                     "type" => "Simple",
-                    "title" => "SessionSpeechlet - Travel booking",
+                    "title" => "Session Milo",
                     "content" => "test card"
                 ),
                 "reprompt" => array(
@@ -137,6 +137,21 @@ if (isset($data) && isset($data->request)) {
         $name = $data->request->intent->name;
 
         switch ($name) {
+          case "ShortRefuelIntent":
+            $ssml = shortRefuelAppointment();
+            break;
+          case "RefuelIntent":
+              $refuelTime;
+              if($data->request->intent->slots->refuelTime->value){
+                  $refuelTime = $data->request->intent->slots->refuelTime->value;
+                  $myArray = explode(':', $refuelTime);
+                  $time = intval($myArray[0]);
+              }
+              $ssml = refuelAppointment($time);
+              break;
+            case "ParkingIntent":
+              $ssml = parkCar();
+              break;
             case "testIntent":
                 $ssml  = testGeluid();
                 $array = array(
