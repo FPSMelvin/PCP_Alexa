@@ -63,12 +63,9 @@ if (isset($data) && isset($data->request)) {
                     $ssml = "<speak>I did not understand the day</speak>";
                 }
                 break;
-            // case "ParkingIntent":
-            //     $ssml = parkCar();
-            //     break;
-            /*case "backpackIntent":
-                $ssml = publicTransport();
-                break;*/
+            case "ParkingIntent":
+                $ssml = parkCar();
+                break;
             // case "ShortPublicTransportIntent":
             //     $ssml = shortPublicTransport();
             //     break;
