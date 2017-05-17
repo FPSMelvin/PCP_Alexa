@@ -50,25 +50,11 @@ if (isset($data) && isset($data->request)) {
                 $ssml = testGeluid();
                 break;
             case "ShortSchedule":
-                $day       = $data->request->intent->slots->shortDay->value;
-                $alarmTime = null;
-
-                // if (isset($data->request->intent->slots->shortSetAlarmTime->value)) {
-                //     $alarmTime = $data->request->intent->slots->shortSetAlarmTime->value;
-                // }
-
-                if (isset($day)) {
-                    $ssml = shortSchedule($day, $alarmTime);
-                } else {
-                    $ssml = "<speak>I did not understand the day</speak>";
-                }
+                $ssml = shortSchedule();
                 break;
             case "ParkingIntent":
                 $ssml = parkCar();
                 break;
-            // case "ShortPublicTransportIntent":
-            //     $ssml = shortPublicTransport();
-            //     break;
             default:
                 $ssml = "<speak>see you later aligator</speak>";
         }

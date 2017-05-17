@@ -23,13 +23,8 @@ function dailySchedule($dayParam, $setAlarmTime){
     return $ssml;
 }
 
-function shortSchedule($dayParam, $setAlarmTime){
-
+function shortSchedule(){
     $ssml = "<speak>Allright, good night!</speak>";
-    if(isset($setAlarmTime)){
-        $ssml = "<speak>Allright, good night!</speak>";
-    }
-
     return $ssml;
 }
 
