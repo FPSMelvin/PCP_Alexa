@@ -63,11 +63,11 @@ function shortRefuelAppointment(){
     return $ssml;
 }
 
-// function publicTransport(){
-//     //$ssml = "<speak>Ok, message sent!</speak>";
-//     $ssml = "<speak>No problem. Have a good trip!</speak>";
-//     return $ssml;
-// }
+function publicTransport(){
+    //$ssml = "<speak>Ok, message sent!</speak>";
+    $ssml = "<speak>No problem. Have a good trip!</speak>";
+    return $ssml;
+}
 //
 // function shortPublicTransport(){
 //     $ssml = "<speak>The train is the fastest way, travel information is sent to your phone.</speak>";
