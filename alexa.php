@@ -55,6 +55,9 @@ if (isset($data) && isset($data->request)) {
             case "ParkingIntent":
                 $ssml = parkCar();
                 break;
+            case "ShortParkingIntent":
+                $ssml = shortParkCar();
+                break;
             default:
                 $ssml = "<speak>see you later aligator</speak>";
         }

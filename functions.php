@@ -68,6 +68,11 @@ function parkCar(){
     $ssml = "<speak>Ok, then just follow the navigation. Go get ‘em champ!</speak>";
     return $ssml;
 }
+
+function shortParkCar(){
+  $ssml = "<speak>There is a parkMobile zone, three hundred meters from your location. Just follow the navigation</speak>";
+  return $ssml;
+}
 //
 // function shortPublicTransport(){
 //     $ssml = "<speak>The train is the fastest way, travel information is sent to your phone.</speak>";
