@@ -146,18 +146,20 @@ if (isset($data) && isset($data->request)) {
       } -->
 
       {
-        "type": "Dialog.ElicitSlot",
-        "slotToElicit": "testNumber",
-        "updatedIntent": {
-          "name": "ExtendedPublicTransportIntent",
-          "confirmationStatus": "NONE",
-          "slots": {
-            "testNumber": {
-              "name": "testNumber",
-              "value": "10",
-              "confirmationStatus": "NONE"
+        "version": "1.0",
+        "sessionAttributes": {},
+        "response": {
+          "outputSpeech": {
+            "type": "PlainText",
+            "text": "From where did you want to start your trip?"
+          },
+          "shouldEndSession": false,
+          "directives": [
+            {
+              "type": "Dialog.ElicitSlot",
+              "slotToElicit": "testNumber"
             }
-          }
+          ]
         }
       }
 <?php
