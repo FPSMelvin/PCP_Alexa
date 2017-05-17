@@ -101,7 +101,7 @@ if (isset($data) && isset($data->request)) {
         );
         echo json_encode($array);
     }
-    elseif ($data->request->dialogState == 'STARTED' || $data->request->dialogState == 'IN_PROGRESS'){
+    elseif ($data->request->dialogState == 'IN_PROGRESS'){
         $array = array(
             "version" => "1.0",
             "sessionAttributes" => array(),
