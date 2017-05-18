@@ -2,7 +2,7 @@
 
 ////// Receiver.php //////
 
-if(!isset($_POST['authkey']))die('Error: No Auth Key');
+if(!isset($_POST['auth_key']))die('Error: No Auth Key');
 if(!isset($_POST['user']))die('Error: No Username!');
 if(!isset($_POST['pw']))die('Error: No password!');
 

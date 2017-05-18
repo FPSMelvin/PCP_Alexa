@@ -16,7 +16,7 @@ $fields = array(
         );
 
 // Init. string
-$fields_string = 'test';
+$fields_string = '';
 // URL-ify stuff
 foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 rtrim($fields_string,'&');
