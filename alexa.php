@@ -30,6 +30,7 @@ if (isset($data) && isset($data->request)) {
                     $myArray = explode(':', $refuelTime);
                     $time = intval($myArray[0]);
                 }
+                $time = 5;
                 $ssml = refuelAppointment($time);
                 break;
             case "NextAppointment":
