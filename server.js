@@ -5,33 +5,28 @@ var fs = require('fs');
 app.listen(8085);
 
 function handler (req, res) {
-  fs.readFile(__dirname + '/index.html',
-  function (err, data) {
-    if (err) {
-      res.writeHead(500);
-      return res.end('Error loading index.html');
-    }
+  // fs.readFile(__dirname + '/index.html',
+  // function (err, data) {
+  //   if (err) {
+  //     res.writeHead(500);
+  //     return res.end('Error loading index.html');
+  //   }
 
     res.writeHead(200);
     res.end(data);
   });
 }
 
-// // Let’s make node/socketio listen on port 3000
-// var io = require('socket.io').listen(3000);
-
 io.on('connection', function (socket) {
 
-    socket.on('disconnect', function() {
-      console.log('disconnected');
-    });
-
-    console.log('testtt');
+    console.log('Node server started');
 
     socket.on('test', function(){
-      console.log('testtt');
+        console.log('testtt');
     });
 
-
+    socket.on('disconnect', function() {
+        console.log('disconnected');
+    });
 
 });
