@@ -1,0 +1,526 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.SearchAction<object@WeatherForecast>"
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "DailyScheduleIntent",
+      "samples": [
+        "Can you tell me my schedule for {day}",
+        "Can you tell me what my schedule is"
+      ],
+      "slots": [
+        {
+          "name": "day",
+          "type": "AMAZON.DayOfWeek",
+          "samples": [
+            "{day}",
+            "{day} please",
+            "check for {day}"
+          ]
+        },
+        {
+          "name": "setAlarmTime",
+          "type": "AMAZON.TIME",
+          "samples": [
+            "{setAlarmTime} ",
+            "set it at {setAlarmTime} "
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ExtendedPublicTransportIntent",
+      "samples": [
+        "extend"
+      ],
+      "slots": [
+        {
+          "name": "testNumber",
+          "type": "AMAZON.NUMBER",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "name": "NextAppointment",
+      "samples": [
+        "when is my next appointment",
+        "what do i do next",
+        "where should i go"
+      ],
+      "slots": []
+    },
+    {
+      "name": "ParkingIntent",
+      "samples": [
+        "where can I park for my next appointment",
+        "I want to park in {parkingTime} "
+      ],
+      "slots": [
+        {
+          "name": "parkingTime",
+          "type": "OBJECT",
+          "samples": [
+            "{parkingTime} ",
+            "please {parkingTime} ",
+            "{parkingTime} please",
+            "ok {parkingTime} ",
+            "okay {parkingTime} "
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PublicTransportIntent",
+      "samples": [
+        "are there any traffic jams"
+      ],
+      "slots": [
+        {
+          "name": "travelInfo",
+          "type": "OBJECT",
+          "samples": [
+            "{travelInfo} ",
+            "okay {travelInfo} ",
+            "yeah {travelInfo} ",
+            "{travelInfo} please",
+            "please {travelInfo} ",
+            "do that {travelInfo} "
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RefuelIntent",
+      "samples": [
+        "bring me to a nearby gas station",
+        "find me a petrol station",
+        "bring me to a nearby petrol station"
+      ],
+      "slots": [
+        {
+          "name": "refuelTime",
+          "type": "AMAZON.TIME",
+          "samples": [
+            "Yes, tell them i will be {refuelTime} later. ",
+            "yes {refuelTime} later"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ShortParkingIntent",
+      "samples": [
+        "find a parking spot",
+        "find parking"
+      ],
+      "slots": []
+    },
+    {
+      "name": "ShortPublicTransportIntent",
+      "samples": [
+        "fastest way to work"
+      ],
+      "slots": []
+    },
+    {
+      "name": "ShortRefuelIntent",
+      "samples": [
+        "I need to refuel"
+      ],
+      "slots": [
+        {
+          "name": "refuelObject",
+          "type": "OBJECT",
+          "samples": [
+            "yes {refuelObject} ",
+            "please {refuelObject} ",
+            "{refuelObject} ",
+            "{refuelObject} please",
+            "{refuelObject} send it",
+            "send it {refuelObject} "
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ShortSchedule",
+      "samples": [
+        "schedule {shortDay} ",
+        "What is my schedule for {shortDay} ",
+        "Schedule for {shortDay} ",
+        "My schedule"
+      ],
+      "slots": [
+        {
+          "name": "shortDay",
+          "type": "AMAZON.DayOfWeek",
+          "samples": [
+            "check {shortDay}",
+            "look for {shortDay}",
+            "{shortDay} "
+          ]
+        }
+      ]
+    },
+    {
+      "name": "testIntent",
+      "samples": [
+        "test"
+      ],
+      "slots": []
+    }
+  ],
+  "types": [
+    {
+      "name": "AMAZON.EUROPE_CITY",
+      "values": [
+        {
+          "name": {
+            "value": "Amsterdam"
+          }
+        },
+        {
+          "name": {
+            "value": "Eindhoven"
+          }
+        },
+        {
+          "name": {
+            "value": "Breda"
+          }
+        }
+      ]
+    },
+    {
+      "name": "OBJECT",
+      "values": [
+        {
+          "name": {
+            "value": "yes"
+          }
+        },
+        {
+          "name": {
+            "value": "okay"
+          }
+        },
+        {
+          "name": {
+            "value": "sure"
+          }
+        },
+        {
+          "name": {
+            "value": "no"
+          }
+        },
+        {
+          "name": {
+            "value": "maybe"
+          }
+        },
+        {
+          "name": {
+            "value": "please"
+          }
+        },
+        {
+          "name": {
+            "value": "positive"
+          }
+        },
+        {
+          "name": {
+            "value": "si"
+          }
+        },
+        {
+          "name": {
+            "value": "cee"
+          }
+        },
+        {
+          "name": {
+            "value": "senor"
+          }
+        },
+        {
+          "name": {
+            "value": "oui"
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-DailyScheduleIntent.IntentSlot-day",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "On what day?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-DailyScheduleIntent.IntentSlot-day",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "{day} you have five appointments. You are expected at your first appointment at nine AM so you should leave at around eight. Do you want me to send the full schedule to your phone?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-DailyScheduleIntent.IntentSlot-setAlarmTime",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "At what time do you want me to set the alarm?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ParkingIntent.IntentSlot-parkingTime",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "I have found a parkMobile spot, three hundred meters from your current location. Do you want me to update the navigation to the parking location?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-PublicTransportIntent.IntentSlot-travelInfo",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Good morning. Yes, there is a big accident on the A Two. I advise you to travel by train. You will be twenty minutes quicker than by car. Do you want me to send the travel information to your phone?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-RefuelIntent.IntentSlot-refuelTime",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Alright, the navigation is adjusted, follow the road and you will arrive at a gas station in eight minutes. because you have to refuel, you will be five minutes later at your appointment . Should I send a message?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ShortRefuelIntent.IntentSlot-refuelObject",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Follow the updated navigation on your phone. Should i let them know you will be a little bit later?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-ShortSchedule.IntentSlot-shortDay",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "When should I check?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-ShortSchedule.IntentSlot-shortDay",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Five appointments, first one at nine AM so you should leave at around eight. Full schedule is sent to your phone, set alarm at seven thirty?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "AMAZON.SearchAction<object@WeatherForecast>",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      },
+      {
+        "name": "DailyScheduleIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "day",
+            "type": "AMAZON.DayOfWeek",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-DailyScheduleIntent.IntentSlot-day",
+              "confirm": "Confirm.Intent-DailyScheduleIntent.IntentSlot-day"
+            }
+          },
+          {
+            "name": "setAlarmTime",
+            "type": "AMAZON.TIME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-DailyScheduleIntent.IntentSlot-setAlarmTime"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ExtendedPublicTransportIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "testNumber",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": false,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      },
+      {
+        "name": "NextAppointment",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      },
+      {
+        "name": "ParkingIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "parkingTime",
+            "type": "OBJECT",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-ParkingIntent.IntentSlot-parkingTime"
+            }
+          }
+        ]
+      },
+      {
+        "name": "PublicTransportIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "travelInfo",
+            "type": "OBJECT",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-PublicTransportIntent.IntentSlot-travelInfo"
+            }
+          }
+        ]
+      },
+      {
+        "name": "RefuelIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "refuelTime",
+            "type": "AMAZON.TIME",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-RefuelIntent.IntentSlot-refuelTime"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ShortParkingIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      },
+      {
+        "name": "ShortPublicTransportIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      },
+      {
+        "name": "ShortRefuelIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "refuelObject",
+            "type": "OBJECT",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-ShortRefuelIntent.IntentSlot-refuelObject"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ShortSchedule",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "shortDay",
+            "type": "AMAZON.DayOfWeek",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicit": "Elicit.Intent-ShortSchedule.IntentSlot-shortDay",
+              "confirm": "Confirm.Intent-ShortSchedule.IntentSlot-shortDay"
+            }
+          }
+        ]
+      },
+      {
+        "name": "testIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": []
+      }
+    ]
+  }
+}
