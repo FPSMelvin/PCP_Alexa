@@ -8,8 +8,14 @@ io.sockets.on('connection', function(socket){
 
     socket.on('disconnect', function() {
       console.log('disconnected');
-    })
+    });
 
     console.log('testtt');
+
+    socket.on('test', function(){
+      console.log('testtt');
+    });
+
+
 
 });

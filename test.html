@@ -11,12 +11,15 @@
         var socket = io.connect('https://85.214.118.187:3000');
 
 
+        $('.test').click(function(){
+            socket.emit('test', 'testtttt');
+        });
 
 
     });
     </script>
   </head>
   <body>
-
+      <p class="test">test me</p>
   </body>
 </html>
