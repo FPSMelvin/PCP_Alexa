@@ -19,7 +19,7 @@ function handler (req, res) {
 
 io.on('connection', function (socket) {
 
-    console.log('Node server started');
+    console.log('New client connected');
 
     socket.on('test', function(){
         console.log('testtt');
