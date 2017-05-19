@@ -25,13 +25,12 @@ io.on('connection', function (socket) {
 
     socket.emit('news', 'melvin wat denken jij?');
 
-    socket.on('test', function (data) {
+    socket.on('test2', function (data) {
       console.log(data);
       notes.push(data);
       socket.emit('test2', notes);
     });
 
-    socket.emit('test2', notes);
     //
     // socket.on('disconnect', function() {
     //     console.log('disconnected');

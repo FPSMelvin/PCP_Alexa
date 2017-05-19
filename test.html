@@ -17,14 +17,14 @@
         });
 
 
-        $('.test').click(function(){
-            socket.emit('test', 'What is your schedule?');
+        $('.test2').click(function(){
+            socket.emit('test2', 'What is your schedule?');
         });
-
-        socket.on('test2', function(data){
-            console.log(data);
-            $(".test3").append(data);
-        });
+        //
+        // socket.on('test2', function(data){
+        //     console.log(data);
+        //     $(".test3").append(data);
+        // });
 
 
     });
@@ -33,7 +33,7 @@
   <body>
       <p class="test">test me</p>
 
-      <p class="test2"></p>
+      <p class="test2">test2</p>
       <p class="test3"></p>
   </body>
 </html>

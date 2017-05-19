@@ -114,7 +114,7 @@ $(document).ready(function(){
 
     socket.on('news', function (data) {
       console.log(data);
-      $(".test2").append(data);
+      //$(".test2").append(data);
       myApp.addNotification({
           title: 'Milo',
           /*subtitle: 'New message from John Doe',*/
@@ -122,13 +122,16 @@ $(document).ready(function(){
           media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
       });
     });
-            // $('.test').click(function(){
-    //     socket.emit('test', 't2222');
-    // });
 
-    // socket.on('test2', function(data){
-    //     console.log(data);
-    // });
+    socket.on('test2', function (data) {
+      console.log(data);
+      myApp.addNotification({
+          title: 'Milo',
+          /*subtitle: 'New message from John Doe',*/
+          message: data,
+          media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+      });
+    });
 
 
 });
