@@ -13,12 +13,12 @@
 
         socket.on('news', function (data) {
           console.log(data);
-          $(".test2").append(data);
+          //$(".test2").append(data);
         });
 
 
         $('.test2').click(function(){
-            socket.emit('test2', 'What is your schedule?');
+            socket.emit('test2', 'Your first appointment is at 10:00 AM at Reduitlaan 29 Breda. Your second appointment is at 11:15 AM at Marktplein');
         });
 
         $('.test3').click(function(){
@@ -32,7 +32,7 @@
   <body>
       <p class="test">test me</p><br>
 
-      <p class="test2">test2</p><br>
-      <p class="test3">test3</p><br>
+      <p class="test2">First appointment</p><br>
+      <p class="test3">Second appointment</p><br>
   </body>
 </html>
