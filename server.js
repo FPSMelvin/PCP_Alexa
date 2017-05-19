@@ -17,20 +17,21 @@ function handler (req, res) {
   });
 }
 
-var woord;
+var notes[];
 
 io.on('connection', function (socket) {
 
     console.log('New client connected');
 
-    socket.on('test', function (data) {
-      console.log(data);
-      woord = data;
-      socket.emit('test2', woord);
-    });
+    socket.emit('news', { hello: 'world' });
 
-    socket.on('disconnect', function() {
-        console.log('disconnected');
-    });
+    // socket.on('test', function (data) {
+    //   notes.push(data)
+    //   socket.emit('test2', woord);
+    // });
+    //
+    // socket.on('disconnect', function() {
+    //     console.log('disconnected');
+    // });
 
 });

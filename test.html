@@ -11,9 +11,13 @@
         var socket = io.connect('http://85.214.118.187:8085');
 
 
-        $('.test').click(function(){
-            socket.emit('test', 't2222');
+        socket.on('news', function (data) {
+          console.log(data);
+          //socket.emit('my other event', { my: 'data' });
         });
+                // $('.test').click(function(){
+        //     socket.emit('test', 't2222');
+        // });
 
         // socket.on('test2', function(data){
         //     console.log(data);
