@@ -124,20 +124,7 @@ $$('.notification-callback').on('click', function () {
 });
 
 
-$(document).ready(function(){
-    var socket = io.connect('http://85.214.118.187:8085');
 
-
-    $('.test').click(function(){
-        socket.emit('test', 'testtttt');
-    });
-
-    socket.on('test2', function (data) {
-      $(".test2").append(data);
-    });
-
-
-});
 
 
 </script>
