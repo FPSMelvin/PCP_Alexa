@@ -17,13 +17,16 @@ function handler (req, res) {
   });
 }
 
+var woord;
+
 io.on('connection', function (socket) {
 
     console.log('New client connected');
 
     socket.on('test', function (data) {
       console.log(data);
-      socket.emit('test2', data);
+      woord = data;
+      sockets.emit('test2', woord);
     });
 
     socket.on('disconnect', function() {
