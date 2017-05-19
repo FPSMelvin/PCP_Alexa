@@ -76,6 +76,8 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script src="jquery.js"></script>
+    <script src="socket.io.js"></script>
     <script type="text/javascript">
         //app.initialize();
         document.addEventListener("deviceready", onDeviceReady, false);
@@ -105,15 +107,30 @@ var $$ = Dom7;
 //     });
 // });
 
-var socket = io.connect('http://85.214.118.187:8085');
+
+$(document).ready(function(){
+    var socket = io.connect('http://85.214.118.187:8085');
 
 
-$('.test').click(function(){
-    socket.emit('test', 'testtttt');
-});
+    socket.on('news', function (data) {
+      console.log(data);
+      $(".test2").append(data);
+      myApp.addNotification({
+          title: 'Milo',
+          /*subtitle: 'New message from John Doe',*/
+          message: data,
+          media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+      });
+    });
+            // $('.test').click(function(){
+    //     socket.emit('test', 't2222');
+    // });
 
-socket.on('test2', function (data) {
-  $(".test2").append(data);
+    // socket.on('test2', function(data){
+    //     console.log(data);
+    // });
+
+
 });
 
 
