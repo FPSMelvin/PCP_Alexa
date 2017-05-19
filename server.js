@@ -21,20 +21,9 @@ io.on('connection', function (socket) {
 
     console.log('New client connected');
 
-    io.emit('this2', 'test2');
-
-    // // socket.on('test', function(data){
-    // //     console.log(data);
-    // // });
-    //
-    // socket.emit('news', { hello: 'world' });
-    //   socket.on('my other event', function (data) {
-    //     console.log(data);
-    //   });
-
     socket.on('test', function (data) {
       console.log(data);
-      socket.emit('test2', 'test2');
+      socket.emit('test', 'test2');
     });
 
     socket.on('disconnect', function() {

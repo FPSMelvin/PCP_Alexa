@@ -15,14 +15,10 @@
             socket.emit('test', 'testtttt');
         });
 
-        socket.on('test2', function (data) {
-          $(".test2").append(data);
+        socket.on('test', function (data) {
+          //$(".test2").append(data);
+          console.log(data);
         });
-
-        // socket.on('news', function (data) {
-        //   console.log(data);
-        //   socket.emit('my other event', { my: 'data' });
-        // });
 
 
     });
