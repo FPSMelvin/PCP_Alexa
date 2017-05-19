@@ -28,8 +28,10 @@ io.on('connection', function (socket) {
     socket.on('test2', function (data) {
       console.log(data);
       notes.push(data);
-      socket.emit('test2', notes);
+      //socket.emit('test2', notes);
     });
+
+    socket.emit('test2', notes);
 
     //
     // socket.on('disconnect', function() {
