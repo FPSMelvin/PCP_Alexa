@@ -21,8 +21,13 @@ io.on('connection', function (socket) {
 
     console.log('New client connected');
 
-    socket.on('test', function(){
-        console.log('testtt');
+    // socket.on('test', function(){
+    //     console.log('testtt');
+    // });
+
+    socket.on('test', function (data) {
+      console.log(data);
+      socket.emit('test2', data);
     });
 
     socket.on('disconnect', function() {

@@ -15,11 +15,17 @@
             socket.emit('test', 'testtttt');
         });
 
+        socket.on('test2', function (data) {
+          $(".test2").append(data);
+        });
+
 
     });
     </script>
   </head>
   <body>
       <p class="test">test me</p>
+
+      <p class="test2"></p>
   </body>
 </html>
