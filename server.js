@@ -17,7 +17,7 @@ function handler (req, res) {
   });
 }
 
-var notes[];
+var notes = [];
 
 io.on('connection', function (socket) {
 
