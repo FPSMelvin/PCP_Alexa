@@ -21,15 +21,15 @@ io.on('connection', function (socket) {
 
     console.log('New client connected');
 
-    socket.on('test', function(data){
-        console.log(data);
+    // socket.on('test', function(data){
+    //     console.log(data);
+    // });
+
+    socket.on('test', function (data) {
+      console.log(data);
+      socket.emit('test2', 'test2');
     });
 
-    // socket.on('test', function (data) {
-    //   console.log(data);
-    //   socket.emit('test2', 'test2');
-    // });
-    //
     socket.on('disconnect', function() {
         console.log('disconnected');
     });

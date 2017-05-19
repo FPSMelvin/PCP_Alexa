@@ -15,9 +15,9 @@
             socket.emit('test', 'testtttt');
         });
 
-        // socket.on('test2', function (data) {
-        //   $(".test2").append(data);
-        // });
+        socket.on('test2', function (data) {
+          $(".test2").append(data);
+        });
 
 
     });
