@@ -22,7 +22,7 @@ io.on('connection', function (socket) {
     console.log('New client connected');
 
     socket.on('test', function(data){
-        console.log(data));
+        console.log(data);
     });
 
     // socket.on('test', function (data) {
