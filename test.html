@@ -15,9 +15,8 @@
             socket.emit('test', 'testtttt');
         });
 
-        socket.on('test', function (data) {
-          //$(".test2").append(data);
-          console.log(data);
+        socket.on('test2', function(data){
+           console.log(data);
         });
 
 
