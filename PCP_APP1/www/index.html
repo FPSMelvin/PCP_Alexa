@@ -133,6 +133,16 @@ $(document).ready(function(){
       });
     });
 
+    socket.on('test3', function (data) {
+      console.log(data);
+      myApp.addNotification({
+          title: 'Milo',
+          /*subtitle: 'New message from John Doe',*/
+          message: data,
+          media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+      });
+    });
+
 
 });
 

@@ -20,20 +20,19 @@
         $('.test2').click(function(){
             socket.emit('test2', 'What is your schedule?');
         });
-        //
-        // socket.on('test2', function(data){
-        //     console.log(data);
-        //     $(".test3").append(data);
-        // });
+
+        $('.test3').click(function(){
+            socket.emit('test3', 'Your first appointment is at 9AM @reduitlaan 29 Breda...');
+        });
 
 
     });
     </script>
   </head>
   <body>
-      <p class="test">test me</p>
+      <p class="test">test me</p><br>
 
-      <p class="test2">test2</p>
-      <p class="test3"></p>
+      <p class="test2">test2</p><br>
+      <p class="test3">test3</p><br>
   </body>
 </html>

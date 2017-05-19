@@ -27,10 +27,12 @@ io.on('connection', function (socket) {
 
     socket.on('test2', function (data) {
       console.log(data);
-      notes.push(data);
-        socket.emit('test2', data);
-        socket.emit('test2', notes);
-        io.emit('test2', data);
+      io.emit('test2', data);
+    });
+
+    socket.on('test3', function (data) {
+      console.log(data);
+      io.emit('test3', data);
     });
 
 
