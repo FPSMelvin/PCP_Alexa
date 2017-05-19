@@ -15,13 +15,16 @@
           console.log(data);
           $(".test2").append(data);
         });
-                // $('.test').click(function(){
-        //     socket.emit('test', 't2222');
-        // });
 
-        // socket.on('test2', function(data){
-        //     console.log(data);
-        // });
+
+        $('.test').click(function(){
+            socket.emit('test', 'What is your schedule?');
+        });
+
+        socket.on('test2', function(data){
+            console.log(data);
+            $(".test3").append(data);
+        });
 
 
     });
@@ -31,5 +34,6 @@
       <p class="test">test me</p>
 
       <p class="test2"></p>
+      <p class="test3"></p>
   </body>
 </html>
