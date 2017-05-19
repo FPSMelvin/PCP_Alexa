@@ -30,6 +30,7 @@ io.on('connection', function (socket) {
       notes.push(data);
         socket.emit('test2', data);
         socket.emit('test2', notes);
+        io.emit('test2', data);
     });
 
 
