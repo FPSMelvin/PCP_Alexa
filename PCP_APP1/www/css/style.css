@@ -1,0 +1,235 @@
+/********************** Framework7 custom CSS **********************/
+
+/* Statusbar background */
+.statusbar-overlay {
+    background: #564336;
+    color: #fff;
+}
+
+#tabbar-custom{
+  display: none;
+}
+
+
+
+/* Custom colors */
+.navbar, .subnavbar{
+    background: #564336;
+}
+
+span{
+  text-transform: none;
+}
+
+p{
+  text-transform: none;
+}
+
+a{
+  color: #fff;
+}
+
+
+
+/* Content */
+.page{
+  background: #fff;
+}
+
+.content-block {
+    margin: 55px 0;
+    padding: 0px;
+}
+
+.swiper-container {
+  height: 100%;
+}
+.swiper-slide {
+  background:#fff;
+  text-transform: none;
+}
+
+.swiper-slide span {
+  text-align:center;
+  display:block;
+  margin:20px;
+  font-size:21px;
+}
+
+.swiper-slide span {
+    text-align: center;
+    display: block;
+    margin: 40px;
+    font-size: 18px;
+}
+
+
+
+.button{
+    border: 1px solid #FF7900;
+/*    height: 40px;
+    line-height: 30px;*/
+}
+
+
+/* Buttons */
+.button.active{
+    width: 75%;
+    margin: 0 auto;
+    background: #FF7900;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+}
+
+
+.img-circle {
+    border-radius: 50%;
+}
+
+
+
+.tabbar-label {
+    line-height: 1;
+    display: block;
+    margin: 0;
+    letter-spacing: .01em;
+    font-size: 10px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: none;
+}
+
+
+
+/* COLUMS REWARDS */
+div[class*="col-"] {
+  background: #fff;
+  text-align: center;
+  color: #000;
+  /*border: 1px solid #ddd;*/
+  padding: 5px;
+}
+.row {
+  /*margin-bottom: 15px;*/
+}
+
+.food-title{
+  color: #6d6d72;
+  font-size: 14px;
+  text-transform: none;
+}
+#rewards-title{
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 80px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 22px;
+  color: #000;
+}
+
+#col-50-border{
+  border: 1px solid #ddd;
+  border-right: 0;
+  border-bottom: 0;
+}
+#product-image-row{
+  margin-bottom: 0;
+}
+
+#oude-prijs-row{
+  margin-bottom: -8px;
+}
+
+#oude-prijs{
+  margin-top: -20px;
+  font-size: 12px;
+  color: gray;
+  text-decoration: line-through;
+}
+#nieuwe-prijs{
+  font-weight: 500;
+  font-size: 16px;
+  color: #ff7900;
+}
+#food-verder-icon{
+  padding: 0;
+}
+
+.food-about-background{
+  width: 100%;
+  height: 200px;
+  background-image: url('../img/kipceasarBIG.jpg');
+  background-size: 100% 100%;
+}
+
+.about-food-title {
+  letter-spacing: 1.6px;
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: 200;
+  padding-top: 150px;
+  margin-right: 100px;
+}
+
+#inhoud-food{
+  font-weight: 500;
+  text-align: left;
+  margin-left: 30px;
+}
+
+
+
+ul {
+  text-transform: none;
+  list-style-type: none; /* no default bullets */
+}
+
+li {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* custom bullets */
+li:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #009DDD;
+  border-radius: 50%;
+}
+
+
+#bonuskaart{
+    margin-top: -25px;
+    color: white;
+    background-image: url(../img/bonuskaart.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#about-oude-prijs{
+    text-decoration: line-through;
+    font-weight: 200;
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+
+#about-nieuwe-prijs{
+    font-weight: 700;
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}
+
+.row.no-gutter .col-33 {
+    background: rgba(255, 0, 0, 0);
+  }

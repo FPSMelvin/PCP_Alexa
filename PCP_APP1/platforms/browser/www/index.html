@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline' "/>
+
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>My App</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="Framework7/dist/css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="Framework7/dist/css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="Framework7/dist/css/my-app.css">
+    <!-- Font icons -->
+    <link rel="stylesheet" href="Framework7/dist/css/framework7-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+
+    <!-- swiper (3 slides en dan button met OK en dan naar index2.html) -->
+
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Views -->
+    <div class="views tabs">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left" id="intro_info"><i class="f7-icons color-white">info</i></div>
+            <div class="center sliding">Albert Heijn</div>
+            <div class="right"><img src="img/ah-logo.png" width="28px" height="auto"></div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content -->
+            <div class="page-content">
+              <!-- Slider -->
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span style="margin-top: 90px;"><b>1. Spaar punten voor kado's</b></span>
+                    <span><img class="img-circle" src="https://placekitten.com/g/250/250"></span>
+                    <span>
+                        <p>
+                            Start vandaag nog met het sparen van Appie punten en open uw eerste kado!
+                        </p>
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span style="margin-top: 90px;"><b>2. Hoe spaar ik punten?</b></span>
+                    <span><img class="img-circle" src="https://placekitten.com/g/250/250"></span>
+                    <span>
+                        <p>
+                            Appie punten zijn op verschillende manieren te sparen. Bekijk de challenges om te zien waarvoor
+                            punten te verdienen zijn.
+                        </p>
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span style="margin-top: 90px;"><b>3. Koppel uw bonuskaart</b></span>
+                    <span><img class="img-circle" src="https://placekitten.com/g/250/250"></span>
+                    <span>
+                        <p>
+                            Scan uw bonuskaart met de camera van uw telefoon om de bonuskaart te koppelen
+                        </p>
+                    </span>
+                    <a href="index2.html" class="button active" style="margin-top:-10px;">Ik snap het!</a>
+                    <!-- Orange: #FF7900 -->
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+<div class="toolbar tabbar" id="tabbar-custom">
+      <div class="toolbar-inner">
+        <a href="#tab-1" class="tab-link active">
+          <i class="icon f7-icons active">help</i>
+          <span class="tabbar-label">Badges</span>
+        </a>
+        <a href="#tab-2" class="tab-link">
+          <i class="icon f7-icons inactive">drawers</i>
+          <span class="tabbar-label">Rewards</span>
+        </a><a href="#tab-3" class="tab-link">
+          <i class="icon f7-icons inactive">cloud</i>
+          <span class="tabbar-label">Challenges</span>
+        </a>
+        <a href="#tab-4" class="tab-link">
+          <i class="icon f7-icons inactive">camera</i>
+          <span class="tabbar-label">Stainless</span>
+        </a>
+      </div>
+</div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="Framework7/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="Framework7/dist/js/my-app.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        //app.initialize();
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            StatusBar.styleLightContent();
+            console.log(StatusBar);
+        }
+    </script>
+</body>
+
+</html>

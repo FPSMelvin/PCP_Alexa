@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline' "/>
+
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Your app title -->
+    <title>Alexa</title>
+    <!-- Path to Framework7 iOS CSS theme styles-->
+    <link rel="stylesheet" href="Framework7/dist/css/framework7.ios.min.css">
+    <!-- Path to Framework7 iOS related color styles -->
+    <link rel="stylesheet" href="Framework7/dist/css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="Framework7/dist/css/my-app.css">
+    <!-- Font icons -->
+    <link rel="stylesheet" href="Framework7/dist/css/framework7-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+        body{
+            background-image: url(img/iphone-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        li::before{
+            display: none;
+        }
+        .list-block li.media-item .item-media img, .list-block.media-list .item-media img{
+            border-radius: 20% !important;
+        }
+        .button{
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="page-content">
+  <div class="content-block">
+    <p><a href="#" class="button notification-custom">With custom image</a></p>
+  </div>
+      </div>
+
+
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="Framework7/dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="Framework7/dist/js/my-app.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        //app.initialize();
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            StatusBar.styleLightContent();
+            console.log(StatusBar);
+        }
+    </script>
+    <script>
+ 
+var $$ = Dom7;
+        
+        
+ 
+$$('.notification-default').on('click', function () {
+    myApp.addNotification({
+        title: 'Milo',
+        message: 'Check the new route here'
+    });
+});
+$$('.notification-full').on('click', function () {
+    myApp.addNotification({
+        title: 'Framework7',
+        subtitle: 'Notification subtitle',
+        message: 'This is a simple notification message with custom icon and subtitle',
+        media: '<i class="icon icon-f7"></i>'
+    });
+});
+$$('.notification-custom').on('click', function () {
+    myApp.addNotification({
+        title: 'Milo',
+        /*subtitle: 'New message from John Doe',*/
+        message: '09:00 Meeting @e-sites Breda.<br> 11:30 Lunch @SupplyGroup Nieuwkuijk',
+        media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+    });
+});
+$$('.notification-callback').on('click', function () {
+    myApp.addNotification({
+        title: 'My Awesome App',
+        subtitle: 'New message from John Doe',
+        message: 'Hello, how are you? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut posuere erat. Pellentesque id elementum urna, a aliquam ante. Donec vitae volutpat orci. Aliquam sed molestie risus, quis tincidunt dui.',
+        media: '<img width="44" height="44" style="border-radius:100%" src="http://lorempixel.com/output/people-q-c-100-100-9.jpg">',
+        onClose: function () {
+            myApp.alert('Notification closed');
+        }
+    });
+});
+    </script>
+</body>
+
+</html>
