@@ -13,7 +13,7 @@
 
         socket.on('news', function (data) {
           console.log(data);
-          //socket.emit('my other event', { my: 'data' });
+          $(".test2").append(data);
         });
                 // $('.test').click(function(){
         //     socket.emit('test', 't2222');

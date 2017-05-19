@@ -23,7 +23,7 @@ io.on('connection', function (socket) {
 
     console.log('New client connected');
 
-    socket.emit('news', { hello: 'world' });
+    socket.emit('news', 'melvin wat denken jij?');
 
     // socket.on('test', function (data) {
     //   notes.push(data)
