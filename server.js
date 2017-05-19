@@ -28,7 +28,7 @@ io.on('connection', function (socket) {
     socket.on('test', function (data) {
       console.log(data);
       notes.push(data);
-      socket.emit('test2', woord);
+      socket.emit('test2', notes);
     });
 
     socket.emit('test2', notes);
