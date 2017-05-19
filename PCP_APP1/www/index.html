@@ -63,6 +63,7 @@
     <div class="page-content">
   <div class="content-block">
     <p><a href="#" class="button notification-custom">With custom image</a></p>
+    <p><a href="#" class="test2">test2</a></p>
   </div>
       </div>
 
@@ -103,6 +104,10 @@ $$('.notification-full').on('click', function () {
         media: '<i class="icon icon-f7"></i>'
     });
 });
+
+
+
+
 $$('.notification-custom').on('click', function () {
     myApp.addNotification({
         title: 'Milo',
@@ -111,6 +116,20 @@ $$('.notification-custom').on('click', function () {
         media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
     });
 });
+
+
+$$('.test2').on('click', function () {
+    myApp.addNotification({
+        title: 'Milo',
+        /*subtitle: 'New message from John Doe',*/
+        message: 'testt',
+        media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+    });
+});
+
+
+
+
 $$('.notification-callback').on('click', function () {
     myApp.addNotification({
         title: 'My Awesome App',
