@@ -112,16 +112,16 @@ $(document).ready(function(){
     var socket = io.connect('http://85.214.118.187:8085');
 
 
-    socket.on('news', function (data) {
-      console.log(data);
-      //$(".test2").append(data);
-      myApp.addNotification({
-          title: 'Milo',
-          /*subtitle: 'New message from John Doe',*/
-          message: data,
-          media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
-      });
-    });
+    // socket.on('news', function (data) {
+    //   console.log(data);
+    //   //$(".test2").append(data);
+    //   myApp.addNotification({
+    //       title: 'Milo',
+    //       /*subtitle: 'New message from John Doe',*/
+    //       message: data,
+    //       media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+    //   });
+    // });
 
     socket.on('test2', function (data) {
       console.log(data);
@@ -158,36 +158,36 @@ $$('.notification-custom').on('click', function () {
 });
 
 
-$(document).keydown(function(e) {
-    switch(e.which) {
-        case 37: // left
-          myApp.addNotification({
-              title: 'Milo',
-              /*subtitle: 'New message from John Doe',*/
-              message: 'testttt',
-              media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
-          });
-        break;
-
-        case 38: // up
-        break;
-
-        case 39: // right
-          myApp.addNotification({
-              title: 'Milo',
-              /*subtitle: 'New message from John Doe',*/
-              message: '09:00 Meeting @e-sites Breda.<br> 11:30 Lunch @SupplyGroup Nieuwkuijk',
-              media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
-          });
-        break;
-
-        case 40: // down
-        break;
-
-        default: return; // exit this handler for other keys
-    }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
-});
+// $(document).keydown(function(e) {
+//     switch(e.which) {
+//         case 37: // left
+//           myApp.addNotification({
+//               title: 'Milo',
+//               /*subtitle: 'New message from John Doe',*/
+//               message: 'testttt',
+//               media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+//           });
+//         break;
+//
+//         case 38: // up
+//         break;
+//
+//         case 39: // right
+//           myApp.addNotification({
+//               title: 'Milo',
+//               /*subtitle: 'New message from John Doe',*/
+//               message: '09:00 Meeting @e-sites Breda.<br> 11:30 Lunch @SupplyGroup Nieuwkuijk',
+//               media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+//           });
+//         break;
+//
+//         case 40: // down
+//         break;
+//
+//         default: return; // exit this handler for other keys
+//     }
+//     e.preventDefault(); // prevent the default action (scroll / move caret)
+// });
 
 
 $$('.test2').on('click', function () {
