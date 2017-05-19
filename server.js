@@ -5,7 +5,7 @@ var fs = require('fs');
 app.listen(8085);
 
 function handler (req, res) {
-  fs.readFile(__dirname + '/PCP_APP1/www/iphone.html',
+  fs.readFile(__dirname + '/test.html',
   function (err, data) {
     if (err) {
       res.writeHead(500);
