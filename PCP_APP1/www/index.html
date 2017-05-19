@@ -118,6 +118,32 @@ $$('.notification-custom').on('click', function () {
 });
 
 
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 37: // left
+        break;
+
+        case 38: // up
+        break;
+
+        case 39: // right
+          myApp.addNotification({
+              title: 'Milo',
+              /*subtitle: 'New message from John Doe',*/
+              message: 'testt',
+              media: '<img width="44" height="44" style="border-radius:100%" src="img/milo.png">'
+          });
+        break;
+
+        case 40: // down
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
+
+
 $$('.test2').on('click', function () {
     myApp.addNotification({
         title: 'Milo',
